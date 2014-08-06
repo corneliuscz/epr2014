@@ -13,13 +13,11 @@
 
 Route::get('/', ['as' => 'home', function()
 {
-	return View::make('home');
+  $attendeesCount = Attendee::all()->count();
+  return View::make('home')->with('attendeesCount', $attendeesCount);;
 }]);
 
-Route::get('admin', function() 
-{
-	return View::make('admin');
-})->before('auth');
+Route::get('admin', 'AttendeesController@index' )->before('auth');
 
 Route::get('login', 'SessionsController@create' );
 
@@ -27,7 +25,5 @@ Route::get('logout', 'SessionsController@destroy' );
 
 Route::resource('sessions', 'SessionsController', ['only' => ['index', 'create', 'destroy', 'store']]);
 
-//Route::get('/', function()
-//{
-//	return View::make('hello');
-//});
+Route::resource('attendees', 'AttendeesController');
+

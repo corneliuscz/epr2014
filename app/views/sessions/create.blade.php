@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<h1>Přihlášení</h2>
+	<h2>Přihlášení</h2>
 
 	{{ Form::open(array('route' => 'sessions.store')) }}
 	

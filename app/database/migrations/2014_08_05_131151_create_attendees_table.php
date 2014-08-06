@@ -19,7 +19,6 @@ class CreateAttendeesTable extends Migration {
 			$table->string('surname');
 			$table->string('email')->unique();
 			$table->string('organisation');
-			$table->timestamp('registered_date');
 			$table->boolean('terms');
 			$table->boolean('cancelled')->nullable();
 			$table->timestamp('cancelled_date')->nullable();
