@@ -18,12 +18,6 @@
 
   </head>
 	<body>
-    @if (Session::get('flash_message'))
-      <div class="flash">
-        {{ Session::get('flash_message') }}
-      </div>
-    @endif
-
 		<nav class="navbar navbar-default" role="navigation">
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
@@ -45,6 +39,14 @@
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav>
+
+    @if (Session::get('flash_message'))
+    <div class="container">
+      <div class="flash">
+        {{ Session::get('flash_message') }}
+      </div>
+    </div>
+    @endif
 
     <div class="container">
       @yield('content')

@@ -10,12 +10,12 @@ class AttendeesController extends \BaseController {
 	 */
 	public function index()
 	{
-      if (Auth::check()) {
-		$attendees = Attendee::all();
-		return View::make('admin')->with('attendees', $attendees);
-      } else {
-        return Redirect::intended('/');
-      }
+    if (Auth::check()) {
+      $attendees = Attendee::all();
+      return View::make('admin')->with('attendees', $attendees);
+    } else {
+      return Redirect::intended('/');
+    }
 	}
 
 	/**
@@ -40,9 +40,9 @@ class AttendeesController extends \BaseController {
 	{
         $input = Input::all();
         $validation = Attendee::validate($input);
-        
+
         if ($validation->fails()) {
-		    return Redirect::back()->withErrors($validation)->withInput();
+          return Redirect::back()->withErrors($validation)->withInput();
         } else {
           $attendee = new Attendee;
           $attendee->firstname    = $input['firstname'];
@@ -50,10 +50,16 @@ class AttendeesController extends \BaseController {
           $attendee->email        = $input['email'];
           $attendee->terms        = $input['terms'];
           $attendee->organisation = $input['organisation'];
-		
+
           $saved = $attendee->save();
-        
+
           if ($saved) {
+            Mail::send('emails.registration', $input, function($message) use ($attendee)                    
+              {
+                $message
+                  ->to($attendee->email,  $attendee->firstname.' '.$attendee->surname)
+                  ->subject('Registrace na konferenci EPR 2014!');
+               });
             return Redirect::intended('/')->with('flash_message', 'Vaše registrace na konferenci byla úspěšná');
           } else {
             return "Něco se rozbilo";
@@ -101,26 +107,26 @@ class AttendeesController extends \BaseController {
 	{
       if (Auth::check()) {
 
-        $input = Input::all();        
+        $input = Input::all();
         $validation = Attendee::validateUpdate($input);
-        
+
         if ($validation->fails()) {
-		    return Redirect::back()->withErrors($validation)->withInput();
+          return Redirect::back()->withErrors($validation)->withInput();
         } else {
           $attendee = Attendee::FindOrFail($id);
-          
+
           $attendee->firstname    = $input['firstname'];
           $attendee->surname      = $input['surname'];
           $attendee->email        = $input['email'];
           $attendee->terms        = $input['terms'];
           $attendee->organisation = $input['organisation'];
-		
+
           $saved = $attendee->save();
-        
+
           if ($saved) {
-            return Redirect::intended('/admin')->with('flash_message', 'Ůčastník byl aktualizován');
+            return Redirect::intended('/admin')->with('flash_message', '<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button> Účastník byl aktualizován</div>');
           } else {
-            return "Něco se rozbilo, zavolej Pepu";
+            return '<div class="alert alert-danger" role="alert">Něco se rozbilo, zavolej Pepu</div>';
           }
         }
       } else {
@@ -137,13 +143,13 @@ class AttendeesController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-      if (Auth::check()) {
+    if (Auth::check()) {
 		$deleted = Attendee::destroy($id);
-        
+
         if ($deleted) {
-          return Redirect::intended('/admin')->with('flash_message', 'Ůčastník byl z konference vymazán');
+          return Redirect::intended('/admin')->with('flash_message', '<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button> Účastník byl z konference vymazán</div>');
         } else {
-          return "Něco se rozbilo, zavolej Pepu.";
+            return '<div class="alert alert-danger" role="alert">Něco se rozbilo, zavolej Pepu</div>';
         }
       } else {
         return Redirect::intended('/');
