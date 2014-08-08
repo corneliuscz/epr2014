@@ -8,11 +8,11 @@ class Attendee extends \Eloquent {
 	 * @var string
 	 */
 	protected $table = 'attendees';
-  
+
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
 	//protected $fillable = [];
-    
+
     public static $rules = array(
         'firstname'     => 'required',
         'surname'       => 'required',
@@ -20,7 +20,7 @@ class Attendee extends \Eloquent {
         'email'         => 'required|email|unique:attendees',
         'terms'         => 'required|boolean'
     );
-  
+
     public static $rulesUpdate = array(
         'firstname'     => 'required',
         'surname'       => 'required',
@@ -28,7 +28,7 @@ class Attendee extends \Eloquent {
         'email'         => 'required|email',
         'terms'         => 'required|boolean'
     );
-    
+
     public static $messages = array(
         'firstname.required'    => 'Jméno je povinná položka',
         'surname.required'      => 'Příjmení je povinná položka',
@@ -38,7 +38,7 @@ class Attendee extends \Eloquent {
         'email.email'           => 'Emailová adresa nemá správný formát',
         'terms.required'        => 'Souhlas s podmínkami je povinný'
     );
-    
+
     public static function validate($data) {
         return Validator::make($data, static::$rules, static::$messages);
     }
@@ -46,5 +46,5 @@ class Attendee extends \Eloquent {
     public static function validateUpdate($data) {
         return Validator::make($data, static::$rulesUpdate, static::$messages);
     }
-  
+
 }

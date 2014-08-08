@@ -14,16 +14,26 @@
 Route::get('/', ['as' => 'home', function()
 {
   $attendeesCount = Attendee::all()->count();
-  return View::make('home')->with('attendeesCount', $attendeesCount);;
+  return View::make('home')->with('attendeesCount', $attendeesCount);
 }]);
 
-Route::get('admin', 'AttendeesController@index' )->before('auth');
-
 Route::get('login', 'SessionsController@create' );
-
 Route::get('logout', 'SessionsController@destroy' );
 
 Route::resource('sessions', 'SessionsController', ['only' => ['index', 'create', 'destroy', 'store']]);
 
-Route::resource('attendees', 'AttendeesController');
+Route::get('admin', 'AttendeesController@index' )->before('auth');
+Route::get('admin/odhlaseni', 'AttcancelledController@index' )->before('auth');
 
+Route::post('attendees/delete/{email}/{cancel_hash}', 'AttendeesController@deleteme')->before('csrf');
+
+Route::resource('attendees', 'AttendeesController');
+Route::resource('cancellees', 'AttcancelledController', ['only' => ['index']]);
+
+Route::get('odhlasit/{email}/{cancel_hash}', function ($email, $cancel_hash)
+{
+  $cancel_hash_decoded = base64_decode($cancel_hash);
+  $attendees = Attendee::where('email', 'like', $email)->where('cancel_hash', 'like', $cancel_hash_decoded)->first();
+
+  return View::make('odhlasit')->with('attendees', $attendees)->with('cancel_hash', $cancel_hash);
+});

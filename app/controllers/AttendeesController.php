@@ -12,7 +12,7 @@ class AttendeesController extends \BaseController {
 	{
     if (Auth::check()) {
       $attendees = Attendee::all();
-      return View::make('admin')->with('attendees', $attendees);
+      return View::make('admin.registered')->with('attendees', $attendees);
     } else {
       return Redirect::intended('/');
     }
@@ -50,6 +50,9 @@ class AttendeesController extends \BaseController {
           $attendee->email        = $input['email'];
           $attendee->terms        = $input['terms'];
           $attendee->organisation = $input['organisation'];
+          $attendee->cancel_hash  = Hash::make('DELETEMEPLEASE'.$input['email']);
+
+          $input['cancel_hash'] = base64_encode ( $attendee->cancel_hash );
 
           $saved = $attendee->save();
 
@@ -59,10 +62,12 @@ class AttendeesController extends \BaseController {
                 $message
                   ->to($attendee->email,  $attendee->firstname.' '.$attendee->surname)
                   ->subject('Registrace na konferenci EPR 2014!');
-               });
-            return Redirect::intended('/')->with('flash_message', 'Vaše registrace na konferenci byla úspěšná');
+              });
+            return Redirect::home()
+                   ->with('flash_message', '<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Zavřít</span></button> Registrace na konferenci proběhla úspěšně.</div>');
           } else {
-            return "Něco se rozbilo";
+            return Redirect::home()
+                   ->with('flash_message', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Zavřít</span></button> Registrace se bohužel nezdařila, zkuste to později prosím.</div>');
           }
         }
 	}
@@ -76,7 +81,8 @@ class AttendeesController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+    // Neřešíme, prostě zobrazíme homepage
+    return Redirect::intended('/');
 	}
 
 	/**
@@ -90,7 +96,7 @@ class AttendeesController extends \BaseController {
 	{
       if (Auth::check()) {
         $attendee = Attendee::FindOrFail($id);
-        return View::make('attendee.edit', compact('attendee'));
+        return View::make('admin.edit', compact('attendee'));
       } else {
         return Redirect::intended('/');
       }
@@ -126,7 +132,7 @@ class AttendeesController extends \BaseController {
           if ($saved) {
             return Redirect::intended('/admin')->with('flash_message', '<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button> Účastník byl aktualizován</div>');
           } else {
-            return '<div class="alert alert-danger" role="alert">Něco se rozbilo, zavolej Pepu</div>';
+            return Redirect::intended('/admin')->with('flash_message', '<div class="alert alert-danger" role="alert">Něco se rozbilo, zavolej Pepu</div>');
           }
         }
       } else {
@@ -144,16 +150,80 @@ class AttendeesController extends \BaseController {
 	public function destroy($id)
 	{
     if (Auth::check()) {
-		$deleted = Attendee::destroy($id);
+      $attendee = Attendee::FindOrFail($id);
 
-        if ($deleted) {
-          return Redirect::intended('/admin')->with('flash_message', '<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button> Účastník byl z konference vymazán</div>');
+      $deleted = Attendee::destroy($id);
+
+      if ($deleted) {
+        /*
+         * We need to save the old data to the list of cancelled attendees
+         */
+        $attcancel = new Attcancelled;
+        $attcancel->firstname     = $attendee->firstname;
+        $attcancel->surname       = $attendee->surname;
+        $attcancel->email         = $attendee->email;
+        $attcancel->organisation  = $attendee->organisation;
+        $attcancel->registered_at = $attendee->created_at;
+        $attcancel->cancelled_at  = new DateTime;
+        $attcancel->cancel_hash   = $attendee->cancel_hash;
+
+        $saved = $attcancel->save();
+
+        return Redirect::intended('/admin')->with('flash_message', '<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Zavřít</span></button> Odhlášení proběhlo úspěšně.</div>');
         } else {
-            return '<div class="alert alert-danger" role="alert">Něco se rozbilo, zavolej Pepu</div>';
+            return Redirect::intended('/admin')->with('flash_message', '<div class="alert alert-danger" role="alert"><div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Zavřít</span></button> Hopla, něco se rozbilo.</div>');
         }
       } else {
         return Redirect::intended('/');
       }
+  }
+
+
+	/**
+	 * Safe Remove the specified resource from storage - attendee inflicted
+	 * DELETE /attendees/delete/{email}/{cancel_hash}
+	 *
+   * @param  string  $email
+   * @param  string  $cancel_hash
+	 * @return Response
+	 */
+	public function deleteme($email, $cancel_hash)
+	{
+    $cancel_hash_decoded = base64_decode($cancel_hash);
+    $attendees = Attendee::where('email', 'like', $email)->where('cancel_hash', 'like', $cancel_hash_decoded)->first();
+
+    $attendee = Attendee::FindOrFail($attendees->id);
+
+    $deleted = Attendee::destroy($attendees->id);
+
+    if ($deleted) {
+      /*
+       * We need to save the old data to the list of cancelled attendees
+       */
+      $attcancel = new Attcancelled;
+      $attcancel->firstname     = $attendee->firstname;
+      $attcancel->surname       = $attendee->surname;
+      $attcancel->email         = $attendee->email;
+      $attcancel->organisation  = $attendee->organisation;
+      $attcancel->registered_at = $attendee->created_at;
+      $attcancel->cancelled_at  = new DateTime;
+      $attcancel->cancel_hash   = $attendee->cancel_hash;
+
+      $attcancel->save();
+
+      Mail::send('emails.signoff', array(), function($message) use ($attendee)
+        {
+          $message
+            ->to($attendee->email,  $attendee->firstname.' '.$attendee->surname)
+            ->subject('Odhlášení z konference EPR 2014!');
+        });
+
+      return Redirect::home()
+             ->with('flash_message', '<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Zavřít</span></button> Odhlášení proběhlo úspěšně.</div>');
+    } else {
+      return Redirect::home()
+             ->with('flash_message', '<div class="alert alert-danger" role="alert"><div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Zavřít</span></button> Hopla, něco se rozbilo.</div>');
+    }
 	}
 
 }

@@ -31,12 +31,18 @@
 				  <a class="navbar-brand" href="{{ URL::to('admin') }}">Konference EPR 2014</a>
 		    </div>
 
+      @if(Auth::check())
 			  <!-- Collect the nav links, forms, and other content for toggling -->
 			  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				  <ul class="nav navbar-nav navbar-right">
+				  <ul class="nav navbar-nav navbar-left">
+					  <li @if (Request::is('admin')) class="active" @endif><a href="{{ URL::to('admin') }}">Účastníci</a></li>
+					  <li @if (Request::is('admin/odhlaseni')) class="active" @endif><a href="{{ URL::to('admin/odhlaseni') }}">Odhlášení účastníci</a></li>
+					</ul>
+          <ul class="nav navbar-nav navbar-right">
 					  <li><a href="{{ URL::to('logout') }}">Odhlásit</a></li>
 					</ul>
-				</div><!-- /.navbar-collapse -->
+        </div><!-- /.navbar-collapse -->
+      @endif
 			</div><!-- /.container-fluid -->
 		</nav>
 

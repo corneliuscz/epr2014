@@ -19,11 +19,11 @@
       </thead>
       @foreach ($attendees as $attendee)
       <tr>
-        <td>{{ $attendee->firstname }}</td>
-        <td>{{ $attendee->surname }}</td>
-        <td>{{ $attendee->organisation }}</td>
-        <td>{{ $attendee->email }}</td>
-        <td>{{ $attendee->terms }}</td>
+        <td>{{{ $attendee->firstname }}}</td>
+        <td>{{{ $attendee->surname }}}</td>
+        <td>{{{ $attendee->organisation }}}</td>
+        <td>{{{ $attendee->email }}}</td>
+        <td>{{{ $attendee->terms }}}</td>
         <td>{{ $attendee->created_at }}</td>
         <td>{{ $attendee->updated_at }}</td>
         <td>

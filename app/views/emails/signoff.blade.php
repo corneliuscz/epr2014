@@ -7,7 +7,7 @@
   </head>
   <body>
     Dobrý den,<br />
-    byl(a) jste úspěšně odhlášena z konferencr Evropské příležitosti regionu 2014.<br />
+    byl(a) jste úspěšně odhlášena z konference Evropské příležitosti regionu 2014.<br />
     <br />
     S pozdravem,<br />
     Organizační tým konference

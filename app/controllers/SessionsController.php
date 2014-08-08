@@ -10,7 +10,7 @@ class SessionsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('sessions.create');
+		return View::make('admin.login');
 	}
 
 	/**
@@ -22,8 +22,6 @@ class SessionsController extends \BaseController {
 	public function store()
 	{
 	
-		// TODO: Validace vstupů!
-
 		$input = Input::all();
 
 		$attempt = Auth::attempt([

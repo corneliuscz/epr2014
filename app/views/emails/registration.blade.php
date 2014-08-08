@@ -12,6 +12,7 @@
     Těšíme se na Vás 27. listopadu 2014 v aule Vysoké školy báňské v Ostravě.<br />
     <br />
     S pozdravem,<br />
-    Organizační tým konference
+    Organizační tým konference<br /><br /><br />
+    P.S. Pokud se nebudete moci konference zúčastnit, {{ link_to('odhlasit/'.$email.'/'.$cancel_hash, 'odhlaste se prosím') }}.
   </body>
 </html>

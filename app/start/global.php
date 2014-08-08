@@ -51,6 +51,25 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
+
+/*
+ * Model Error Handler
+ * To handle nonexistent data in database.
+ *
+ */
+
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
+App::error(function(ModelNotFoundException $e)
+{
+  Log::error($e);
+  //  Response::make("Unknown", 404);
+  return Response::make(
+        View::make('errors.attunknown')
+        , 404);
+});
+
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler
@@ -64,7 +83,7 @@ App::error(function(Exception $exception, $code)
 
 App::down(function()
 {
-	return Response::make("Be right back!", 503);
+	return Response::make("Za chvíli se zase vrátíme!", 503);
 });
 
 /*
