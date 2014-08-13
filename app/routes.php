@@ -27,8 +27,8 @@ Route::get('admin/odhlaseni', 'AttcancelledController@index' )->before('auth');
 
 Route::post('attendees/delete/{email}/{cancel_hash}', 'AttendeesController@deleteme')->before('csrf');
 
-Route::resource('attendees', 'AttendeesController')->before('auth');
-Route::resource('cancellees', 'AttcancelledController', ['only' => ['index']])->before('auth');
+Route::resource('attendees', 'AttendeesController');
+Route::resource('cancellees', 'AttcancelledController', ['only' => ['index']]);
 
 Route::get('odhlasit/{email}/{cancel_hash}', function ($email, $cancel_hash)
 {
