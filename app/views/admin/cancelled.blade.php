@@ -11,6 +11,8 @@
           <th>Příjmení</th>
           <th>Organizace</th>
           <th>E-mail</th>
+          <th>Hlavní program</th>
+          <th>Seminář</th>
           <th>Registrován</th>
           <th>Odhlášen</th>
         </tr>
@@ -21,6 +23,8 @@
         <td>{{{ $cancellee->surname }}}</td>
         <td>{{{ $cancellee->organisation }}}</td>
         <td>{{{ $cancellee->email }}}</td>
+        <td>{{{ $cancellee->hlavni_sal }}}</td>
+        <td>{{{ $cancellee->seminar }}}</td>
         <td>{{ $cancellee->registered_at }}</td>
         <td>{{ $cancellee->cancelled_at }}</td>
       </tr>

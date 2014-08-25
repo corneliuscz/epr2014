@@ -11,6 +11,8 @@
           <th>Příjmení</th>
           <th>Organizace</th>
           <th>E-mail</th>
+          <th>Hlavní program</th>
+          <th>Seminář</th>
           <th>Souhlas</th>
           <th>Registrován</th>
           <th>Aktualizován</th>
@@ -23,6 +25,8 @@
         <td>{{{ $attendee->surname }}}</td>
         <td>{{{ $attendee->organisation }}}</td>
         <td>{{{ $attendee->email }}}</td>
+        <td>{{{ $attendee->hlavni_sal }}}</td>
+        <td>{{{ $attendee->seminar }}}</td>
         <td>{{{ $attendee->terms }}}</td>
         <td>{{ $attendee->created_at }}</td>
         <td>{{ $attendee->updated_at }}</td>

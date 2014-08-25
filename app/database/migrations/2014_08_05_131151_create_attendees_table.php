@@ -18,7 +18,9 @@ class CreateAttendeesTable extends Migration {
 			$table->string('firstname');
 			$table->string('surname');
 			$table->string('email')->unique();
-			$table->string('organisation');
+      $table->string('organisation');
+      $table->enum('hlavni_sal', array('-', 'hlavni-sal'));
+      $table->enum('seminar', array('-', 's1', 's2', 's3'));
       $table->boolean('terms');
 			$table->string('cancel_hash');
 			$table->timestamps();
