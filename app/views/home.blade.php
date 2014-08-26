@@ -28,7 +28,7 @@
     {{ Form::text('firstname') }}
 
     @if ($errors->has('firstname'))
-      <p class="help-block">{{ $errors->first('firstname') }}</p> 
+      <p class="help-block">{{ $errors->first('firstname') }}</p>
     @endif
 	</div>
 
@@ -36,8 +36,8 @@
 		{{ Form::label('surname', 'Příjmení:') }}
     {{ Form::text('surname') }}
 
-    @if ($errors->has('surname')) 
-      <p class="help-block">{{ $errors->first('surname') }}</p> 
+    @if ($errors->has('surname'))
+      <p class="help-block">{{ $errors->first('surname') }}</p>
     @endif
 	</div>
 
@@ -55,7 +55,7 @@
     {{ Form::email('email') }}
 
     @if ($errors->has('email'))
-      <p class="help-block">{{ $errors->first('email') }}</p> 
+      <p class="help-block">{{ $errors->first('email') }}</p>
     @endif
   </div>
 
@@ -63,10 +63,10 @@
     {{ Form::checkbox('terms', 1) }}
 		{{ Form::label('terms', 'Souhlasím s podmínkami registrace na konferenci EPR 2014') }}
 
-    @if ($errors->has('terms')) 
-      <p class="help-block">{{ $errors->first('terms') }}</p> 
+    @if ($errors->has('terms'))
+      <p class="help-block">{{ $errors->first('terms') }}</p>
     @endif
-	</div> 
+	</div>
 
   <fieldset>
     <h3>Hlavní program</h3>
@@ -75,8 +75,8 @@
       {{ Form::checkbox('hlavni_sal', 'hlavni-sal', true) }}
       {{ Form::label('hlavni_sal', 'Chci se zúčastnit hlavního programu') }}
 
-      @if ($errors->has('hlavni_sal')) 
-        <p class="help-block">{{ $errors->first('hlavni_sal') }}</p> 
+      @if ($errors->has('hlavni_sal'))
+        <p class="help-block">{{ $errors->first('hlavni_sal') }}</p>
       @endif
     </div>
 
@@ -92,7 +92,7 @@
       {{ Form::radio('seminar', 's3') }}
       {{ Form::label('seminar', 'Klub fanoušků integrovaných přístupů') }}
 
-      @if ($errors->has('seminar')) 
+      @if ($errors->has('seminar'))
         <p class="help-block">{{ $errors->first('seminar') }}</p>
       @endif
     </div>

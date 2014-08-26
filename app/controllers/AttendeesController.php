@@ -111,6 +111,12 @@ class AttendeesController extends \BaseController {
   {
       if (Auth::check()) {
         $attendee = Attendee::FindOrFail($id);
+
+        //dd ($attendee);
+        if ($attendee['hlavni_sal'] === '-') {
+          $attendee['hlavni_sal'] = NULL;
+        }
+
         return View::make('admin.edit', compact('attendee'));
       } else {
         return Redirect::intended('/');
@@ -141,6 +147,19 @@ class AttendeesController extends \BaseController {
           $attendee->email        = $input['email'];
           $attendee->terms        = $input['terms'];
           $attendee->organisation = $input['organisation'];
+
+
+          if (isset($input['hlavni_sal'])) {
+            $attendee->hlavni_sal = $input['hlavni_sal'];
+          } else {
+            $attendee->hlavni_sal = $input['hlavni_sal'] = '-';
+          }
+
+          if (isset($input['seminar'])) {
+            $attendee->seminar = $input['seminar'];
+          } else {
+            $attendee->seminar = $input['seminar'] = '-';
+          }
 
           $saved = $attendee->save();
 
