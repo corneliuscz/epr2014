@@ -1,0 +1,20 @@
+{
+  "name": "EPR 2014 website",
+  "version": "0.1",
+  "homepage": "http://konference.dobra-rada.cz",
+  "authors": [
+    "Josef Vybíral <josef.vybiral@dobra-rada.cz>"
+  ],
+  "description": "Web konference Evropské příležitosti regionu 2014",
+  "license": "CC-BY-NC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0"
+  }
+}
