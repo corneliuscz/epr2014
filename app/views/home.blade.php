@@ -1,51 +1,53 @@
 @extends('layouts.default')
 
 @section('content')
-<div class="container">
-<section id="prezentuji" class="prezentuji">
+<div class="wrapper-white-top">
+  <div class="container">
+    <section id="prezentuji" class="prezentuji">
 
-<div class="row">
-  <div class="col-md-12">
-    <h2>Prezentují</h2>
-  </div>
-</div>  
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Prezentují</h2>
+      </div>
+    </div>
 
-<div class="row">
-  <div class="col-sm-4 col-lg-3">
-    <img src="/assets/img/photo-template.png" class="img-responsive" alt="Thomas Baer Foto">
-    <div class="ucinkujici">Thomas Baer <em>Evropská komise</em></div>
-  </div>
-  <div class="col-sm-4 col-lg-3">
-    <img src="/assets/img/photo-template.png" class="img-responsive" alt="Kateřina Dostálová Foto">
-    <div class="ucinkujici">Kateřina Dostálová <em>Regionální rada Moravskoslezsko</em></div>
-  </div>
-  <div class="col-sm-4 col-lg-3">
-    <img src="/assets/img/photo-template.png" class="img-responsive" alt="Klára Dostálová Foto">
-    <div class="ucinkujici">Klára Dostálová <em>Ministerstvo pro místní rozvoj</em></div>
-  </div>
-  <div class="clearfix visible-sm-block"></div>
-  <div class="col-sm-4 col-lg-3">
-    <img src="/assets/img/photo-template.png" class="img-responsive" alt="Jan Jedlička Foto">
-    <div class="ucinkujici">Jan Jedlička <em>Česká spořitelna </em></div>
-  </div>
-  <div class="clearfix visible-lg-block"></div>
-  <div class="col-sm-4 col-lg-3">
-    <img src="/assets/img/photo-template.png" class="img-responsive" alt="Stefania Koczar-Sikora Foto">
-    <div class="ucinkujici">Stefania Koczar-Sikora <em>ROP Polsko</em></div>
-  </div>
-  <div class="col-sm-4 col-lg-3">
-    <img src="/assets/img/photo-template.png" class="img-responsive" alt="Václav Palička Foto">
-    <div class="ucinkujici">Václav Palička <em>Statutární město Ostrava</em></div>
-  </div>
-  <div class="clearfix visible-sm-block"></div>
-  <div class="col-sm-4 col-lg-3">
-    <img src="/assets/img/photo-template.png" class="img-responsive" alt="David Sventek Foto">
-    <div class="ucinkujici">David Sventek <em>IROP</em></div>
-  </div>
-</div>      
+    <div class="row">
+      <div class="col-sm-4 col-lg-3">
+        <img src="/assets/img/photo-template.png" class="img-responsive" alt="Thomas Baer Foto">
+        <div class="ucinkujici">Thomas Baer <em>Evropská komise</em></div>
+      </div>
+      <div class="col-sm-4 col-lg-3">
+        <img src="/assets/img/photo-template.png" class="img-responsive" alt="Kateřina Dostálová Foto">
+        <div class="ucinkujici">Kateřina Dostálová <em>Regionální rada Moravskoslezsko</em></div>
+      </div>
+      <div class="col-sm-4 col-lg-3">
+        <img src="/assets/img/photo-template.png" class="img-responsive" alt="Klára Dostálová Foto">
+        <div class="ucinkujici">Klára Dostálová <em>Ministerstvo pro místní rozvoj</em></div>
+      </div>
+      <div class="clearfix visible-sm-block"></div>
+      <div class="col-sm-4 col-lg-3">
+        <img src="/assets/img/photo-template.png" class="img-responsive" alt="Jan Jedlička Foto">
+        <div class="ucinkujici">Jan Jedlička <em>Česká spořitelna </em></div>
+      </div>
+      <div class="clearfix visible-lg-block"></div>
+      <div class="col-sm-4 col-lg-3">
+        <img src="/assets/img/photo-template.png" class="img-responsive" alt="Stefania Koczar-Sikora Foto">
+        <div class="ucinkujici">Stefania Koczar-Sikora <em>ROP Polsko</em></div>
+      </div>
+      <div class="col-sm-4 col-lg-3">
+        <img src="/assets/img/photo-template.png" class="img-responsive" alt="Václav Palička Foto">
+        <div class="ucinkujici">Václav Palička <em>Statutární město Ostrava</em></div>
+      </div>
+      <div class="clearfix visible-sm-block"></div>
+      <div class="col-sm-4 col-lg-3">
+        <img src="/assets/img/photo-template.png" class="img-responsive" alt="David Sventek Foto">
+        <div class="ucinkujici">David Sventek <em>IROP</em></div>
+      </div>
+    </div>
 
-</section>
-</div>  
+    </section>
+  </div>
+</div>
 
 <div class="wrapper-blue">
   <div class="container">
@@ -150,8 +152,10 @@
   </div>  
 </div>
 
-<div class="container">
-  <section id="registrace" class="registrace">
+<div class="wrapper-white">
+  <div class="container">
+
+    <section id="registrace" class="registrace">
 
     <div class="row">
       <div class="col-md-12">
@@ -270,9 +274,10 @@
 
       @endif
       </div>
-    </div>  
+    </div>
 
-  </section> 
-  
-</div> 
+    </section>
+
+  </div>
+</div>
 @stop

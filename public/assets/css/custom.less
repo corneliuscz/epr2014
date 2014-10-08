@@ -88,33 +88,78 @@
   font-style: normal;
 }
 
+.wrapper-white,
+.wrapper-white-top,
+.wrapper-blue,
+.wrapper-blue-bottom
+{
+  padding-bottom: 64px;
+}
+
+.wrapper-white,
+.wrapper-blue,
+.wrapper-blue-bottom
+{
+  padding-top: 100px;
+}
+
+.wrapper-white
+{
+  background-color: #FFF;
+  background-image: url('/assets/img/pruh-modry_pul_inv.png'), url('/assets/img/pruh-modry_pul.png');
+  background-repeat: no-repeat;
+  background-position: 50% 0%, 50% 100%;
+}
+
+.wrapper-white-top
+{
+  background-color: #FFF;
+  background-image: url('/assets/img/pruh-modry_pul.png');
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+}
+
 .wrapper-blue
 {
-  background-color: #00afec;
+  background-color: @headings-color;
+  background-image: url('/assets/img/pruh-bily_pul.png'), url('/assets/img/pruh-bily_pul_inv.png');
+  background-repeat: no-repeat;
+  background-position: 50% 0, 50% 100%;
+}
+
+.wrapper-blue-bottom
+{
+  background-color: @headings-color;
+  background-image: url('/assets/img/pruh-bily_pul.png');
+  background-repeat: no-repeat;
+  background-position: 50% 0;
 }
 
 .wrapper-darkblue
 {
   color: #fff;
   background-color: #21244c;
+  padding: 32px 0 64px 0;
 }
 
-.wrapper-blue h2, 
+.wrapper-blue h2,
+.wrapper-blue-bottom h2,
 .wrapper-darkblue h2,
-.wrapper-blue a, 
+.wrapper-blue a,
 .wrapper-darkblue a
 {
   color: #fff
 }
 
-.program .program--radka 
+.program .program--radka
 {
   color: #00afec;
   font-size: 18px;
   background-color: #fff;
-  margin-bottom: 10px;  
-  box-shadow: 2px 3px 0 #0196C9;
-  
+  margin-bottom: 10px;
+/*  box-shadow: 2px 3px 0 #0196C9;*/
+  box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.15);
+
   position: relative;
   overflow: hidden;
 }

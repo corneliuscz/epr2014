@@ -70,7 +70,7 @@
 
   @yield('content')
 
-  <div class="wrapper-blue">
+  <div class="wrapper-blue-bottom">
     <div class="container">
       <section id="partneri" class="partneri">
         <div class="row">
