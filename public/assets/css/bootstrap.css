@@ -881,7 +881,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
@@ -1022,7 +1022,7 @@ h2,
 h3,
 .h3 {
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: .8em;
 }
 h1 small,
 .h1 small,
@@ -1063,19 +1063,19 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 36px;
+  font-size: 70px;
 }
 h2,
 .h2 {
-  font-size: 30px;
+  font-size: 47px;
 }
 h3,
 .h3 {
-  font-size: 24px;
+  font-size: 32px;
 }
 h4,
 .h4 {
-  font-size: 18px;
+  font-size: 21px;
 }
 h5,
 .h5 {
@@ -1083,7 +1083,7 @@ h5,
 }
 h6,
 .h6 {
-  font-size: 12px;
+  font-size: 10px;
 }
 p {
   margin: 0 0 10px;

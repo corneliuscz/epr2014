@@ -18,8 +18,8 @@
     <![endif]-->
   </head>
   <body>
-    <div class="navbar-wrapper">
-      <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="navbar-wrapper" id="top">
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
           <!-- Nav Toggle -->
           <div class="navbar-header">
@@ -34,12 +34,12 @@
           <div class="collapse navbar-collapse" id="navbar-collapse-main">
             <!-- <ul class="nav navbar-nav"> -->
             <div class="row menu">
-              <div class="col-sm-2 menu-item"><a href="#">Úvod</a></div>
-              <div class="col-sm-2 menu-item"><a href="#">Prezentují</a></div>
-              <div class="col-sm-2 menu-item menu-item--program"><a href="#">Program</a></div>
-              <div class="col-sm-2 menu-item"><a href="#">Registrace</a></div>
-              <div class="col-sm-2 menu-item"><a href="#">Partneři</a></div>
-              <div class="col-sm-2 menu-item"><a href="#">Kontakty</a></div>
+              <div class="col-sm-2 menu-item"><a href="#top">Úvod</a></div>
+              <div class="col-sm-2 menu-item"><a href="#prezentuji">Prezentují</a></div>
+              <div class="col-sm-2 menu-item menu-item--program"><a href="#program">Program</a></div>
+              <div class="col-sm-2 menu-item"><a href="#registrace">Registrace</a></div>
+              <div class="col-sm-2 menu-item"><a href="#partneri">Partneři</a></div>
+              <div class="col-sm-2 menu-item"><a href="#mapa">Místo</a></div>
             </div>
             <!-- </ul> -->
           </div><!-- /.navbar-collapse -->
@@ -50,23 +50,23 @@
   <div class="jumbotron header--epr">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 col-md-offset-1 col-lg-offset-2">
+        <div class="hidden-xs col-sm-5 col-sm-offset-1 col-xs-offset-1 col-md-offset-1 col-lg-offset-2">
           <img class="logo clearfix" src="/assets/img/epr-logo.png" alt="Evropské příležitosti regionu 2014-20">
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-4 col-md-3 col-sm-offset-1 col-md-offset-2 col-lg-offset-3">
-          <a href="#registrace" class="btn btn-primary btn-lg btn-block" role="button">Registrace</a>
+        <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-2 col-lg-offset-3">
+          <a href="#registrace" class="btn btn-primary btn-lg btn-block btn-registrace" role="button">Registrace</a>
         </div>
       </div>
     </div>
-  </div>     
-    
+  </div>
+
   @if (Session::get('flash_message'))
   <div class="flash">
     {{ Session::get('flash_message') }}
   </div>
-  @endif   
+  @endif
 
   @yield('content')
 
@@ -80,30 +80,19 @@
         </div>
 
         <div class="row">
-          <div class="col-sm-4">
-            <img src="http://fakeimg.pl/900x500/" class="img-responsive" alt="Česká Spořitelna a.s.">
-          </div>
-          <div class="col-sm-4">
-            <img src="http://fakeimg.pl/900x500/" class="img-responsive" alt="VŠB-TUO">
-          </div>
-          <div class="col-sm-4">
-            <img src="http://fakeimg.pl/900x500/" class="img-responsive" alt="Planetárium Ostrava">
+          <div class="col-sm-12 loga-partneru">
+            <img src="/assets/img/logo_dark-csas.png" width="180" height="80" alt="Česká Spořitelna a.s.">
+            <img src="/assets/img/logo_dark-vsb.png" width="95" height="110" alt="VŠB-TUO">
+            <img src="/assets/img/logo_dark-planetarium.png" width="250" height="80" alt="Planetárium Ostrava">
           </div>
         </div>
       </section>
     </div>
-  </div>    
-
-  <div class="container">
-    <section id="mapa" class="mapa">
-      <div class="row">
-        <div class="col-md-12">
-          Na konferenci se dostanete tudy :-)
-        </div>
-      </div>    
-    </section>
   </div>
-    
+
+  <div class="wrapper-misto" id="mapa">
+  </div>
+
   <div class="wrapper-darkblue">
     <div class="container">
       <footer id="kontakt" class="kontakt">
@@ -120,7 +109,7 @@
               Na Jízdárně 2824/2<br>
               702 00, Ostrava-Moravská Ostrava
             </address>
-            
+
             <table>
               <tr>
                 <td class="th">E-mail:</td>
@@ -136,16 +125,19 @@
             </table>
           </div>
           <div class="col-sm-6">
-            <img src="http://fakeimg.pl/900x200/?text=publicita" class="img-responsive" alt="Spolufinancováno ERDF">
+            <img src="/assets/img/banner.png" class="img-responsive" alt="Spolufinancováno ERDF">
           </div>
         </div>
       </footer>
     </div>
-  </div>     
-    
+  </div>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src='https://maps.googleapis.com/maps/api/js?key=&sensor=false&extension=.js'></script>
     <script src="/assets/js/bootstrap.min.js"></script>
+
+    <script src="/assets/js/mapa.js"></script>
   </body>
 </html>

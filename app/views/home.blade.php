@@ -12,34 +12,36 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-4 col-lg-3">
+      <div class="col-sm-6 col-md-4">
         <img src="/assets/img/photo-template.png" class="img-responsive" alt="Thomas Baer Foto">
         <div class="ucinkujici">Thomas Baer <em>Evropská komise</em></div>
       </div>
-      <div class="col-sm-4 col-lg-3">
+      <div class="col-sm-6 col-md-4">
         <img src="/assets/img/photo-template.png" class="img-responsive" alt="Kateřina Dostálová Foto">
         <div class="ucinkujici">Kateřina Dostálová <em>Regionální rada Moravskoslezsko</em></div>
       </div>
-      <div class="col-sm-4 col-lg-3">
+      <div class="clearfix visible-sm-block"></div>
+      <div class="col-sm-6 col-md-4">
         <img src="/assets/img/photo-template.png" class="img-responsive" alt="Klára Dostálová Foto">
         <div class="ucinkujici">Klára Dostálová <em>Ministerstvo pro místní rozvoj</em></div>
       </div>
-      <div class="clearfix visible-sm-block"></div>
-      <div class="col-sm-4 col-lg-3">
+      <div class="clearfix visible-md-block"></div>
+      <div class="col-sm-6 col-md-4">
         <img src="/assets/img/photo-template.png" class="img-responsive" alt="Jan Jedlička Foto">
         <div class="ucinkujici">Jan Jedlička <em>Česká spořitelna </em></div>
       </div>
-      <div class="clearfix visible-lg-block"></div>
-      <div class="col-sm-4 col-lg-3">
+      <div class="clearfix visible-sm-block"></div>
+      <div class="col-sm-6 col-md-4">
         <img src="/assets/img/photo-template.png" class="img-responsive" alt="Stefania Koczar-Sikora Foto">
         <div class="ucinkujici">Stefania Koczar-Sikora <em>ROP Polsko</em></div>
       </div>
-      <div class="col-sm-4 col-lg-3">
+      <div class="col-sm-6 col-md-4">
         <img src="/assets/img/photo-template.png" class="img-responsive" alt="Václav Palička Foto">
         <div class="ucinkujici">Václav Palička <em>Statutární město Ostrava</em></div>
       </div>
+      <div class="clearfix visible-md-block"></div>
       <div class="clearfix visible-sm-block"></div>
-      <div class="col-sm-4 col-lg-3">
+      <div class="col-sm-6 col-md-4">
         <img src="/assets/img/photo-template.png" class="img-responsive" alt="David Sventek Foto">
         <div class="ucinkujici">David Sventek <em>IROP</em></div>
       </div>
@@ -68,7 +70,7 @@
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">9:15 - 9:20 <span>Hlavní sál</span></div>
-            <div class="col-sm-8 program--prednaska">Zdravice - videovstup <em>(p. Jourová)</em></div>  
+            <div class="col-sm-8 program--prednaska">Zdravice - videovstup <em>(p. Jourová)</em></div>
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">9:20 - 9:30 <span>Hlavní sál</span></div>
@@ -98,6 +100,17 @@
             <div class="col-sm-4 program--cas">13:00 - 14:00 <span>Foyer</span></div>
             <div class="col-sm-8 program--prednaska">Oběd</div>
           </div>
+          <div class="row program--pdf">
+            <div class="col-md-12">
+              <img src="/assets/img/ikona-pdf.png" alt="PDF s programem"> <a href="/assets/program.pdf" title="PDF s programem konference pro tisk" class="btn btn-primary btn-lg">PDF s programem</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <hr>
         </div>
       </div>
 
@@ -115,14 +128,20 @@
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">14:00 - 15:30</div>
-            <div class="col-sm-8 program--prednaska">Sekce pro školy <em>(zástupce škol)</em></div>  
+            <div class="col-sm-8 program--prednaska">Sekce pro školy <em>(zástupce škol)</em></div>
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">14:00 - 15:30</div>
             <div class="col-sm-8 program--prednaska">Klub fanoušků integrovaných přístupů <em>(Daniel Konczyna, Úřad Regionální rady Moravskoslezsko)</em></div>
           </div>
         </div>
-      </div>  
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <hr>
+        </div>
+      </div>
 
       <div class="row">
         <div class="col-md-12">
@@ -138,18 +157,18 @@
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">10:00 - 11:00</div>
-            <div class="col-sm-8 program--prednaska">Osobní konzultace u stánků jednotlivých OP <em>(jednotlivé OP/MAS)</em></div>  
+            <div class="col-sm-8 program--prednaska">Osobní konzultace u stánků jednotlivých OP <em>(jednotlivé OP/MAS)</em></div>
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">13:00 - 14:30</div>
-            <div class="col-sm-8 program--prednaska">Osobní konzultace u stánků jednotlivých OP <em>(jednotlivé OP/MAS)</em></div>  
+            <div class="col-sm-8 program--prednaska">Osobní konzultace u stánků jednotlivých OP <em>(jednotlivé OP/MAS)</em></div>
           </div>
         </div>
-      </div>    
+      </div>
 
     </section>
 
-  </div>  
+  </div>
 </div>
 
 <div class="wrapper-white">
@@ -219,7 +238,7 @@
       </div>
 
       <fieldset>
-        
+
       <div class="form-group @if ($errors->has('terms')) has-error @endif">
         {{ Form::checkbox('terms', 1) }}
         {{ Form::label('terms', 'Souhlasím s podmínkami registrace na konferenci EPR 2014', ['class' => 'label--tmavy']) }}
@@ -228,7 +247,7 @@
           <p class="help-block">{{ $errors->first('terms') }}</p>
         @endif
         </div>
-      
+
       </fieldset>
 
       <fieldset>

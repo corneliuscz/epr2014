@@ -1,24 +1,64 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=latin-ext);
 /*!
- * Bootstrap v3.2.0 (http://getbootstrap.com)
- * Copyright 2011-2014 Twitter, Inc.
+ * EPR2014 (http://konference.dobra-rada.cz)
+ * Copyright 2014 Regional Council Moravia Silesia, Josef Vybíral
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+/*
+ * Hlavička
+ */
 .navbar-wrapper {
-  position: absolute;
   z-index: 20;
   top: 0;
   right: 0;
   left: 0;
 }
+.navbar {
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .navbar {
+    max-height: 42px;
+  }
+}
+@media (min-width: 992px) {
+  .navbar {
+    max-height: 49px;
+  }
+}
 .header--epr {
-  height: 621px;
-  background: url('/assets/img/header-md.png') 50% 50% no-repeat;
+  height: 665px;
+  background: url('/assets/img/header-0.png') 50% 50% no-repeat;
+}
+@media (min-width: 480px) {
+  .header--epr {
+    background: url('/assets/img/header-xs.png') 50% 50% no-repeat;
+  }
+}
+@media (min-width: 768px) {
+  .header--epr {
+    background: url('/assets/img/header-sm.png') 50% 50% no-repeat;
+  }
+}
+@media (min-width: 992px) {
+  .header--epr {
+    background: url('/assets/img/header-md.png') 50% 50% no-repeat;
+  }
 }
 .menu-item {
-  font-size: 1em;
-  line-height: 3em;
   text-align: center;
   text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .menu-item {
+    line-height: 3.2em;
+  }
+}
+@media (min-width: 992px) {
+  .menu-item {
+    font-size: 1.28em;
+    line-height: 2.7em;
+  }
 }
 .menu-item a {
   color: #fff;
@@ -26,26 +66,38 @@
 .menu-item--program {
   background-color: #e50046;
 }
-/*
-.navbar
-{
-    min-height: 3em;
+@media (min-width: 768px) {
+  .menu-item--program {
+    border-bottom: 5px solid #e50046;
+  }
 }
-
-.navbar-inverse
-{
-    border-bottom: #21244c;
-    background-color: #21244c;
-}
-*/
 .logo {
-  margin-top: 9.5em;
+  margin-top: 11.5em;
   margin-bottom: 2.5em;
+}
+@media (min-width: 768px) {
+  .logo {
+    margin-left: 2em;
+  }
+}
+@media (min-width: 992px) {
+  .logo {
+    margin-top: 13em;
+    margin-left: 0em;
+  }
 }
 .btn-primary,
 .btn-primary:hover {
-  box-shadow: 0 3px 0 #dadada;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.15);
 }
+@media (max-width: 768px) {
+  .btn-registrace {
+    margin-top: 27em;
+  }
+}
+/*
+ * Seznam přednášejících
+ */
 .ucinkujici {
   color: #FFF;
   font-size: 22px;
@@ -60,11 +112,14 @@
   display: block;
   font-style: normal;
 }
+/*
+ * Šikmé pozadí
+ */
 .wrapper-white,
 .wrapper-white-top,
 .wrapper-blue,
 .wrapper-blue-bottom {
-  padding-bottom: 64px;
+  padding-bottom: 0px;
 }
 .wrapper-white,
 .wrapper-blue,
@@ -107,6 +162,9 @@
 .wrapper-darkblue a {
   color: #ffffff;
 }
+/*
+ * Stylování programu
+ */
 .program .program--radka {
   color: #00afec;
   font-size: 18px;
@@ -153,11 +211,26 @@
   }
 }
 .program .program--prednaska em {
-  color: #222;
+  color: #21244c;
   font-size: 14px;
   font-style: normal;
   display: block;
 }
+.program hr {
+  margin-top: 64px;
+  margin-bottom: 20px;
+  border-width: 1px 0px 1px 0px;
+  border-style: solid none solid none;
+  border-color: #00a6e0 transparent #40c3f1 transparent;
+  height: 3px;
+}
+.program .program--pdf {
+  text-align: center;
+  margin-top: 44px;
+}
+/*
+ * Registrační formulář
+ */
 .registrace .label--modry {
   color: #00afec;
   margin-left: 18px;
@@ -186,14 +259,47 @@
 .registrace fieldset:last-of-type {
   border-bottom: none;
 }
-.mapa {
-  min-height: 340px;
+/*
+ * Partneři
+ */
+.partneri {
+  margin-bottom: 64px;
 }
+.partneri .loga-partneru {
+  text-align: center;
+}
+.partneri img {
+  margin: 0 2em;
+}
+/*
+ * Kontakt
+ */
 .kontakt address {
   font-size: 120%;
 }
 .kontakt .th {
   color: #00afec;
   padding-right: 8px;
+}
+/*
+ *  Mapa v patičce
+ */
+#mapa {
+  height: 460px;
+  width: 100%;
+}
+.gm-style-iw * {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.gm-style-iw h3,
+.gm-style-iw p {
+  margin: 0;
+  padding: 0.5em 0;
+}
+.gm-style-iw a {
+  color: #00afec;
 }
 /*# sourceMappingURL=custom.css.map */
