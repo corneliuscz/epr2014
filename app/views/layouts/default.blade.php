@@ -81,9 +81,11 @@
 
         <div class="row">
           <div class="col-sm-12 loga-partneru">
-            <img src="/assets/img/logo_dark-csas.png" width="180" height="80" alt="Česká Spořitelna a.s.">
-            <img src="/assets/img/logo_dark-vsb.png" width="95" height="110" alt="VŠB-TUO">
-            <img src="/assets/img/logo_dark-planetarium.png" width="250" height="80" alt="Planetárium Ostrava">
+            <a href="http://www.dobra-rada.cz" title="Regionální rada Moravskoslezsko"><img src="/assets/img/logo_dark-rrms.png" width="180" height="90" alt="Regionální rada Moravskoslezsko"></a>
+            <a href="http://www.nejkacka.eu" title="Nejkačka.eu"><img src="/assets/img/logo_dark-nejkacka.png" width="335" height="80" alt="Regionální rada Moravskoslezsko"></a><br>
+            <a href="http://www.csas.cz" title="Česká Spořitelna a.s."><img src="/assets/img/logo_dark-csas.png" width="180" height="80" alt="Česká Spořitelna a.s."></a>
+            <a href="http://www.vsb.cz" title="VŠB-TUO"><img src="/assets/img/logo_dark-vsb.png" width="95" height="110" alt="VŠB-TUO"></a>
+            <a href="http://planetarium.vsb.cz" title="VŠB-TUO"><img src="/assets/img/logo_dark-planetarium.png" width="250" height="80" alt="Planetárium Ostrava"></a>
           </div>
         </div>
       </section>
@@ -117,10 +119,7 @@
               </tr>
               <tr valign="top">
                 <td rowspan="2" class="th">Telefon:</td>
-                <td>+420 552 303 555</td>
-              </tr>
-              <tr>
-                <td>+420 725 743 530</td>
+                <td>+420 552 303 545</td>
               </tr>
             </table>
           </div>
