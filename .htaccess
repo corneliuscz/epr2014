@@ -1,4 +1,6 @@
-﻿<IfModule mod_rewrite.c>
+#Laravel Rewrite to go to /public folder
+<IfModule mod_rewrite.c>
+  Options +FollowSymLinks
 	RewriteEngine On
 	RewriteRule ^$ /public/ [L]
 	RewriteCond %{REQUEST_FILENAME} !-f
