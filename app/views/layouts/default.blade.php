@@ -18,6 +18,15 @@
     <![endif]-->
   </head>
   <body>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-4032099-2', 'auto');
+      ga('send', 'pageview');
+    </script>
     <div class="navbar-wrapper" id="top">
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -35,7 +44,7 @@
             <!-- <ul class="nav navbar-nav"> -->
             <div class="row menu">
               <div class="col-sm-2 menu-item"><a href="#top">Úvod</a></div>
-              <div class="col-sm-2 menu-item"><a href="#prezentuji">Prezentují</a></div>
+              <div class="col-sm-2 menu-item"><a href="#prezentuji">Hosté</a></div>
               <div class="col-sm-2 menu-item menu-item--program"><a href="#program">Program</a></div>
               <div class="col-sm-2 menu-item"><a href="#registrace">Registrace</a></div>
               <div class="col-sm-2 menu-item"><a href="#partneri">Partneři</a></div>

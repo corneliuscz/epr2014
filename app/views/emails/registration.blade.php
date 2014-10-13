@@ -14,11 +14,11 @@
       <li>Hlavní program</li>
     @endif
     @if ($seminar === 's1')
-      <li>Sekce pro nové starosty</li>
+      <li>Sekce nejen pro nové starosty</li>
     @elseif ($seminar === 's2')
       <li>Sekce pro školy</li>
     @elseif ($seminar === 's3')
-      <li>Klub fanoušků integrovaných přístupů</li>
+      <li>Problematika Integrovaných teritoriálních investic pro poradenské agentury</li>
     @endif
     </ul>
     <br />

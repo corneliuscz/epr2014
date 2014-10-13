@@ -175,9 +175,8 @@
 
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
-        <!-- Přihlášených je už: {{ $attendeesCount }}-->
 
-        @if ($attendeesCount < 5)
+        @if ($attendeesCount['hlavni'] < $options['kapacita'])
 
           @if ($errors->has())
             <ul>
@@ -258,14 +257,41 @@
         <h3>Odpolední program</h3>
 
         <div class="form-group @if ($errors->has('seminar')) has-error @endif">
-          {{ Form::radio('seminar', 's1') }}
-          {{ Form::label('seminar', 'Sekce pro nové starosty', ['class' => 'label--tmavy']) }}<br>
+          @if ($attendeesCount['s1'] < $options['kapacita_s1'])
+            {{ Form::radio('seminar', 's1') }}
+          @else
+            <input name="seminar" value="s1" type="radio" disabled>
+          @endif
+            {{ Form::label('seminar', 'Sekce nejen pro nové starosty', ['class' => 'label--tmavy']) }}
+          @if ($attendeesCount['s1'] < $options['kapacita_s1'])
+            (volná místa: {{ $volne['s1'] }})<br>
+          @else
+            (kapacita vyčerpána)<br>
+          @endif
 
-          {{ Form::radio('seminar', 's2') }}
-          {{ Form::label('seminar', 'Sekce pro školy', ['class' => 'label--tmavy']) }}<br>
+          @if ($attendeesCount['s2'] < $options['kapacita_s2'])
+            {{ Form::radio('seminar', 's2') }}
+          @else
+            <input name="seminar" value="s2" type="radio" disabled>
+          @endif
+            {{ Form::label('seminar', 'Sekce pro školy', ['class' => 'label--tmavy']) }}
+          @if ($attendeesCount['s2'] < $options['kapacita_s2'])
+            (volná místa: {{ $volne['s2'] }})<br>
+          @else
+            (kapacita vyčerpána)<br>
+          @endif
 
-          {{ Form::radio('seminar', 's3') }}
-          {{ Form::label('seminar', 'Klub fanoušků integrovaných přístupů', ['class' => 'label--tmavy']) }}
+          @if ($attendeesCount['s3'] < $options['kapacita_s3'])
+            {{ Form::radio('seminar', 's3') }}
+          @else
+            <input name="seminar" value="s3" type="radio" disabled>
+          @endif
+            {{ Form::label('seminar', 'Problematika Integrovaných teritoriálních investic pro poradenské agentury', ['class' => 'label--tmavy']) }}
+          @if ($attendeesCount['s3'] < $options['kapacita_s3'])
+            (volná místa: {{ $volne['s3'] }})<br>
+          @else
+            (kapacita vyčerpána)<br>
+          @endif
 
           @if ($errors->has('seminar'))
             <p class="help-block">{{ $errors->first('seminar') }}</p>
@@ -280,7 +306,7 @@
 
       @else
 
-      Je nám líto, ale kapacita konference byla vyčerpána.
+      <p>Je nám líto, ale kapacita konference byla vyčerpána.</p>
 
       @endif
       </div>
@@ -291,3 +317,4 @@
   </div>
 </div>
 @stop
+</p>

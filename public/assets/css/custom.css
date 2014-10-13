@@ -231,6 +231,9 @@
 /*
  * Registrační formulář
  */
+.registrace {
+  min-height: 23em;
+}
 .registrace .label--modry {
   color: #00afec;
   margin-left: 18px;

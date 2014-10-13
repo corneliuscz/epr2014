@@ -17,34 +17,35 @@
     <![endif]-->
 
   </head>
-	<body>
-		<nav class="navbar navbar-default" role="navigation">
-			<div class="container-fluid">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Přepnout navigaci</span>
-					  <span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-			      <span class="icon-bar"></span>
-				  </button>
-				  <a class="navbar-brand" href="{{ URL::to('admin') }}">Konference EPR 2014</a>
-		    </div>
+  <body>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Přepnout navigaci</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{ URL::to('admin') }}">Konference EPR 2014</a>
+        </div>
 
       @if(Auth::check())
-			  <!-- Collect the nav links, forms, and other content for toggling -->
-			  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				  <ul class="nav navbar-nav navbar-left">
-					  <li @if (Request::is('admin')) class="active" @endif><a href="{{ URL::to('admin') }}">Účastníci</a></li>
-					  <li @if (Request::is('admin/odhlaseni')) class="active" @endif><a href="{{ URL::to('admin/odhlaseni') }}">Odhlášení účastníci</a></li>
-					</ul>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-left">
+            <li @if (Request::is('admin')) class="active" @endif><a href="{{ URL::to('admin') }}">Účastníci</a></li>
+            <li @if (Request::is('admin/odhlaseni')) class="active" @endif><a href="{{ URL::to('admin/odhlaseni') }}">Odhlášení účastníci</a></li>
+            <li @if (Request::is('admin/nastaveni')) class="active" @endif><a href="{{ URL::to('admin/nastaveni') }}">Nastavení konference</a></li>
+          </ul>
           <ul class="nav navbar-nav navbar-right">
-					  <li><a href="{{ URL::to('logout') }}">Odhlásit</a></li>
-					</ul>
+            <li><a href="{{ URL::to('logout') }}">Odhlásit</a></li>
+          </ul>
         </div><!-- /.navbar-collapse -->
       @endif
-			</div><!-- /.container-fluid -->
-		</nav>
+      </div><!-- /.container-fluid -->
+    </nav>
 
     @if (Session::get('flash_message'))
     <div class="container">
