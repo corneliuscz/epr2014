@@ -151,9 +151,12 @@
   background-position: 50% 0;
 }
 .wrapper-darkblue {
-  color: #fff;
+  color: #ffffff;
   background-color: #21244c;
   padding: 32px 0 64px 0;
+}
+.wrapper-darkblue table {
+  color: #ffffff;
 }
 .wrapper-blue h2,
 .wrapper-blue-bottom h2,
@@ -283,6 +286,17 @@
 .kontakt .th {
   color: #00afec;
   padding-right: 8px;
+}
+/*
+ * Oprava pozice nadpisu po kliknutí v menu
+ */
+@media (min-width: 992px) {
+  .kotva::before {
+    content: " ";
+    display: block;
+    padding-top: 280px;
+    margin-top: -240px;
+  }
 }
 /*
  *  Mapa v patičce

@@ -1,3 +1,39 @@
+/*jslint browser: true*/
+/*global $, jQuery, alert*/
+
+$(function () {
+  "use strict";
+  /* **************************** */
+  /*  Smooth scrolling to anchor  */
+  /* **************************** */
+
+
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      var targetOffset = target.offset().top;
+
+      // Change URL if possible
+      if (history.pushState) {
+        history.pushState(null, null, this.hash);
+      }
+
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          //scrollTop: target.offset().top
+          scrollTop: targetOffset-40
+        }, 500);
+        return false;
+      }
+    }
+  });
+});
+
+/*
+ * Skript generující Google Mapu
+ */
+
 google.maps.event.addDomListener(window, 'load', init);
 
 var map;

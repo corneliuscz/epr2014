@@ -27,6 +27,14 @@
       ga('create', 'UA-4032099-2', 'auto');
       ga('send', 'pageview');
     </script>
+
+
+  @if (Session::get('flash_message'))
+  <div class="flash">
+    {{ Session::get('flash_message') }}
+  </div>
+  @endif
+
     <div class="navbar-wrapper" id="top">
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -70,12 +78,6 @@
       </div>
     </div>
   </div>
-
-  @if (Session::get('flash_message'))
-  <div class="flash">
-    {{ Session::get('flash_message') }}
-  </div>
-  @endif
 
   @yield('content')
 
@@ -146,6 +148,6 @@
     <script src='https://maps.googleapis.com/maps/api/js?key=&sensor=false&extension=.js'></script>
     <script src="/assets/js/bootstrap.min.js"></script>
 
-    <script src="/assets/js/mapa.js"></script>
+    <script src="/assets/js/app.min.js"></script>
   </body>
 </html>

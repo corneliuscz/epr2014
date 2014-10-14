@@ -206,9 +206,13 @@
 
 .wrapper-darkblue
 {
-  color: #fff;
+  color: #ffffff;
   background-color: @epr_blue--dark;
   padding: 32px 0 64px 0;
+
+  table {
+    color: #ffffff;
+  }
 }
 
 .wrapper-blue h2,
@@ -391,6 +395,19 @@
   {
     color: @epr_blue--light;
     padding-right: 8px;
+  }
+}
+
+/*
+ * Oprava pozice nadpisu po kliknutí v menu
+ */
+
+.kotva::before {
+  @media (min-width: @screen-md-min) {
+    content: " ";
+    display: block;
+    padding-top: 280px;
+    margin-top: -240px;
   }
 }
 
