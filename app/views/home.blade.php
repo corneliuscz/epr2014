@@ -229,7 +229,7 @@
           @endif
         </div>
 
-        <fieldset>
+        <fieldset class="inline-label">
           <div class="form-group @if ($errors->has('terms')) has-error @endif">
             {{ Form::checkbox('terms', 1) }}
             {{ Form::label('terms', 'Souhlasím s podmínkami registrace na konferenci EPR 2014', ['class' => 'label--tmavy']) }}
@@ -241,7 +241,7 @@
 
         </fieldset>
 
-        <fieldset>
+        <fieldset class="inline-label">
           <h3>Hlavní program</h3>
 
           <div class="form-group @if ($errors->has('hlavni_sal')) has-error @endif">
@@ -254,7 +254,7 @@
           </div>
         </fieldset>
 
-        <fieldset>
+        <fieldset class="inline-label">
           <h3>Odpolední program</h3>
 
           <div class="form-group @if ($errors->has('seminar')) has-error @endif">
@@ -265,9 +265,9 @@
             @endif
               {{ Form::label('seminar', 'Sekce nejen pro nové starosty', ['class' => 'label--tmavy']) }}
             @if ($attendeesCount['s1'] < $options['kapacita_s1'])
-              (volná místa: {{ $volne['s1'] }})<br>
+              <span class="kapacita">(volná místa: {{ $volne['s1'] }})</span><br>
             @else
-              (kapacita vyčerpána)<br>
+              <span class="kapacita">(kapacita vyčerpána)</span><br>
             @endif
 
             @if ($attendeesCount['s2'] < $options['kapacita_s2'])
@@ -277,9 +277,9 @@
             @endif
               {{ Form::label('seminar', 'Sekce pro školy', ['class' => 'label--tmavy']) }}
             @if ($attendeesCount['s2'] < $options['kapacita_s2'])
-              (volná místa: {{ $volne['s2'] }})<br>
+              <span class="kapacita">(volná místa: {{ $volne['s2'] }})</span><br>
             @else
-              (kapacita vyčerpána)<br>
+              <span class="kapacita">(kapacita vyčerpána)</span><br>
             @endif
 
             @if ($attendeesCount['s3'] < $options['kapacita_s3'])
@@ -289,9 +289,9 @@
             @endif
               {{ Form::label('seminar', 'Problematika Integrovaných teritoriálních investic pro poradenské agentury', ['class' => 'label--tmavy']) }}
             @if ($attendeesCount['s3'] < $options['kapacita_s3'])
-              (volná místa: {{ $volne['s3'] }})<br>
+              <span class="kapacita">(volná místa: {{ $volne['s3'] }})</span><br>
             @else
-              (kapacita vyčerpána)<br>
+              <span class="kapacita">(kapacita vyčerpána)</span><br>
             @endif
 
             @if ($errors->has('seminar'))
