@@ -89,7 +89,7 @@
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">11:10 - 13:00 <span>Hlavní sál</span></div>
-            <div class="col-sm-8 program--prednaska">Panelová diskuze: Smysluplné investice v období 2014-20 a jiná hvězdná témata <em>K. Dostálová, J. Jedlička, S. Koczar-Sikora, V. Palička, zástupce MMR</em></div>
+            <div class="col-sm-8 program--prednaska">Panelová diskuze: Smysluplné investice v období 2014-20 a&nbsp;jiná hvězdná témata <em>K.&nbsp;Dostálová, J.&nbsp;Jedlička, S.&nbsp;Koczar-Sikora, V.&nbsp;Palička, zástupce MMR</em></div>
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">13:00 - 14:00 </div>
@@ -179,16 +179,16 @@
       @if ($regForm)
         
         @if ($attendeesCount['hlavni'] < $options['kapacita'])
-
+                                      
           @if ($errors->has())
-            <ul>
-              {{ $errors->first('firstname', '<li>:message</li>'); }}
-              {{ $errors->first('surname', '<li>:message</li>'); }}
-              {{ $errors->first('organisation', '<li>:message</li>'); }}
-              {{ $errors->first('email', '<li>:message</li>'); }}
-              {{ $errors->first('terms', '<li>:message</li>'); }}
-              {{ $errors->first('hlavni_sal', '<li>:message</li>'); }}
-            </ul>
+            <div class="alert alert-danger">
+              {{ $errors->first('firstname', '<p>:message</p>'); }}
+              {{ $errors->first('surname', '<p>:message</p>'); }}
+              {{ $errors->first('organisation', '<p>:message</p>'); }}
+              {{ $errors->first('email', '<p>:message</p>'); }}
+              {{ $errors->first('terms', '<p>:message</p>'); }}
+              {{ $errors->first('hlavni_sal', '<p>:message</p>'); }}
+            </div>
           @endif
 
         {{ Form::open(array('route' => 'attendees.store')) }}

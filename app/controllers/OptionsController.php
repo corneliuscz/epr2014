@@ -12,7 +12,7 @@ class OptionsController extends \BaseController {
   {
     if (Auth::check()) {
       $options = Option::all();
-      return View::make('options.index')->with('options', $options);
+      return View::make('admin.options.index')->with('options', $options);
     } else {
       return Redirect::intended('/');
     }
@@ -73,7 +73,29 @@ class OptionsController extends \BaseController {
    */
   public function update($id)
   {
-    //
+      if (Auth::check()) {
+
+        $input = Input::all();
+/*        $validation = Option::validate($input);
+
+        if ($validation->fails()) {
+          return Redirect::back()->withErrors($validation)->withInput();
+        } else { */
+          $option = Option::FindOrFail($id);
+
+          $option->value = $input['value'];
+
+          $saved = $option->save();
+
+          if ($saved) {
+            return Redirect::intended('/admin/nastaveni')->with('flash_message', '<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button> Nastavení aktualizováno</div>');
+          } else {
+            return Redirect::intended('/admin/nastaveni')->with('flash_message', '<div class="alert alert-danger" role="alert">Změna nastavení se nezdařila</div>');
+          }
+        }
+      /*} else {
+        return Redirect::intended('/');
+      }*/
   }
 
   /**

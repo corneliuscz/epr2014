@@ -41,10 +41,9 @@ class AttendeesController extends \BaseController {
     $input = Input::all();
     $validation = Attendee::validate($input);
 
-   // dd($input);
-
     if ($validation->fails()) {
-      return Redirect::back()->withErrors($validation)->withInput();
+      //return Redirect::back()->withErrors($validation)->withInput();
+      return Redirect::intended('/#registrace')->withErrors($validation)->withInput();
     } else {
       $attendee = new Attendee;
       $attendee->firstname    = $input['firstname'];
@@ -82,7 +81,7 @@ class AttendeesController extends \BaseController {
               ->with('flash_message', '<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Zavřít</span></button> Registrace na konferenci proběhla úspěšně.</div>');
       } else {
         return Redirect::home()
-              ->with('flash_message', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Zavřít</span></button> Registrace se bohužel nezdařila, zkuste to později prosím.</div>');
+              ->with('flash_message', '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Zavřít</span></button> Registrace se nezdařila, zkuste to prosím později.</div>');
       }
     }
   }

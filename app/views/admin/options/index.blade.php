@@ -12,7 +12,7 @@
       {{ Form::label('value', $option->name) }}
       {{ Form::text('value') }}
         @if ($errors->has('value')) <p class="help-block">{{ $errors->first('value') }}</p> @endif
-      {{ Form::submit('Uložit změny') }}
+      {{ Form::submit('Uložit hodnotu') }}
     </div>
 
     {{ Form::close() }}

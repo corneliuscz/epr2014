@@ -396,6 +396,15 @@
     color: @epr_blue--light;
     padding-right: 8px;
   }
+  
+  img {
+    margin: 2em 0em;
+    
+   @media (min-width: @screen-sm-min)
+   {
+     margin: 0em;
+   }
+  }
 }
 
 /*
@@ -433,4 +442,18 @@
 
 .gm-style-iw a {
   color: @epr_blue--light;
+}
+
+/*
+ * Flash zprávy v hlavičce
+ */
+
+.flash {
+  z-index: 9999;
+  position: absolute;
+  width: 100%;
+  
+  .alert {
+    border-radius: 0;
+  }
 }

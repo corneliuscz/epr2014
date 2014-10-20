@@ -32,23 +32,23 @@ class Attendee extends \Eloquent {
     );
 
     public static $messages = array(
-        'firstname.required'          => 'Jméno je povinná položka',
-        'surname.required'            => 'Příjmení je povinná položka',
-        'organisation.required'       => 'Organizace je povinná položka',
-        'email.required'              => 'Emailová adresa je povinná položka',
+        'firstname.required'          => '<strong>Jméno</strong> je povinná položka',
+        'surname.required'            => '<strong>Příjmení</strong> je povinná položka',
+        'organisation.required'       => '<strong>Organizace</strong> je povinná položka',
+        'email.required'              => '<strong>Emailová adresa</strong> je povinná položka',
         'email.unique'                => 'Někdo jiný se pomocí stejné e-mailové 
                                           adresy zaregistroval. Použijte prosím 
                                           jinou.',
-        'email.email'                 => 'Emailová adresa nemá správný formát',
+        'email.email'                 => '<strong>Emailová adresa</strong> nemá správný formát',
         'hlavni_sal.required_without' => 'Pro úspěšnou registraci na konferenci
-                                          si musíte vybrat alespoň jednu část 
-                                          programu, které se zúčastníte (hlavní
+                                          si musíte <strong>vybrat alespoň jednu část 
+                                          programu,</strong> které se zúčastníte (hlavní
                                           program nebo tématické sekce)',
         'seminar.required_without'    => 'Pro úspěšnou registraci na konferenci
-                                          si musíte vybrat alespoň jednu část 
-                                          programu, které se zúčastníte (hlavní
+                                          si musíte <strong>vybrat alespoň jednu část 
+                                          programu,</strong> které se zúčastníte (hlavní
                                           program nebo tématické sekce)',
-        'terms.required'              => 'Souhlas s podmínkami je povinný'
+        'terms.required'              => '<strong>Souhlas s podmínkami</strong> je povinný'
     );
 
     public static function validate($data) {
