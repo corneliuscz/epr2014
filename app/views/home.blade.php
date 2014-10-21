@@ -13,8 +13,8 @@
 
     <div class="row">
       <div class="col-sm-6 col-md-4 col-lg-3">
-        <img src="/assets/img/dostalova.png" class="img-responsive" alt="Klára Dostálová Foto">
-        <div class="ucinkujici">Klára Dostálová <em>Ministerstvo pro místní rozvoj</em></div>
+        <img src="/assets/img/vicenova.png" class="img-responsive" alt="Milena Vicenová Foto">
+        <div class="ucinkujici">Milena Vicenová <em>Ministerstvo pro místní rozvoj</em></div>
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3">
         <img src="/assets/img/jedlicka.png" class="img-responsive" alt="Jan Jedlička Foto">
@@ -73,7 +73,7 @@
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">9:30 - 10:00 <span>Hlavní sál</span></div>
-            <div class="col-sm-8 program--prednaska">Implementační struktura pro léta 2014-20 <em>Klára Dostálová, Ministerstvo pro místní rozvoj</em></div>
+            <div class="col-sm-8 program--prednaska">Implementační struktura pro léta 2014-20 <em>Zástupce Ministerstva pro místní rozvoj</em></div>
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">10:00 - 10:30 <span>Hlavní sál</span></div>
@@ -85,11 +85,11 @@
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">11:00 - 11:10 <span>Hlavní sál</span></div>
-            <div class="col-sm-8 program--prednaska">Výlet do paralelních světů Evropské unie <em>Daniel Konczyna, Úřad Regionální rady Moravskoslezsko</em></div>
+            <div class="col-sm-8 program--prednaska">Výlet do paralelních světů Evropské unie <em>Kateřina Dostálová, Daniel Konczyna, Úřad Regionální rady Moravskoslezsko</em></div>
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">11:10 - 13:00 <span>Hlavní sál</span></div>
-            <div class="col-sm-8 program--prednaska">Panelová diskuze: Smysluplné investice v období 2014-20 a jiná hvězdná témata <em>K. Dostálová, J. Jedlička, S. Koczar-Sikora, V. Palička, zástupce MMR</em></div>
+            <div class="col-sm-8 program--prednaska">Panelová diskuze: Smysluplné investice v období 2014-20 a jiná hvězdná témata <em>Jan Jedlička, Stefania Koczar-Sikora, Václav Palička, Milena Vicenová, David Sventek</em></div>
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">13:00 - 14:00 </div>

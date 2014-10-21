@@ -1,5 +1,6 @@
 /*jslint browser: true*/
-/*global $, jQuery, alert*/
+/*jslint plusplus: true */
+/*global $, jQuery, alert, google*/
 
 $(function () {
   "use strict";
@@ -8,21 +9,21 @@ $(function () {
   /* **************************** */
 
 
-  $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      var targetOffset = target.offset().top;
+  $('a[href*=#]:not([href=#])').click(function () {
+    if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+      var target = $(this.hash),
+        targetOffset = target.offset().top;
 
       // Change URL if possible
       if (history.pushState) {
         history.pushState(null, null, this.hash);
       }
 
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
       if (target.length) {
         $('html,body').animate({
           //scrollTop: target.offset().top
-          scrollTop: targetOffset-40
+          scrollTop: targetOffset - 40
         }, 500);
         return false;
       }
@@ -39,12 +40,14 @@ google.maps.event.addDomListener(window, 'load', init);
 var map;
 
 function init() {
+  "use strict";
+
   var mapOptions = {
-    center: new google.maps.LatLng(49.830983,18.162889),
+    center: new google.maps.LatLng(49.830983, 18.162889),
     zoom: 16,
     zoomControl: true,
     zoomControlOptions: {
-      style: google.maps.ZoomControlStyle.DEFAULT,
+      style: google.maps.ZoomControlStyle.DEFAULT
     },
     disableDoubleClickZoom: true,
     mapTypeControl: false,
@@ -55,7 +58,7 @@ function init() {
     draggable : true,
     overviewMapControl: true,
     overviewMapControlOptions: {
-      opened: false,
+      opened: false
     },
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     styles: [
@@ -68,7 +71,7 @@ function init() {
           { lightness: -6 },
           { visibility: 'on' }
         ]
-      },{
+      }, {
         featureType: 'water',
         elementType: 'labels',
         stylers: [
@@ -77,7 +80,7 @@ function init() {
           { lightness: -6 },
           { visibility: 'off' }
         ]
-      },{
+      }, {
         featureType: 'poi.park',
         elementType: 'geometry',
         stylers: [
@@ -86,7 +89,7 @@ function init() {
           { lightness: -15 },
           { visibility: 'on' }
         ]
-      },{
+      }, {
         featureType: 'landscape',
         elementType: 'geometry',
         stylers: [
@@ -95,7 +98,7 @@ function init() {
           { lightness: 59 },
           { visibility: 'on' }
         ]
-      },{
+      }, {
         featureType: 'landscape',
         elementType: 'labels',
         stylers: [
@@ -104,7 +107,7 @@ function init() {
           { lightness: 100 },
           { visibility: 'off' }
         ]
-      },{
+      }, {
         featureType: 'road',
         elementType: 'geometry',
         stylers: [
@@ -113,7 +116,7 @@ function init() {
           { lightness: 100 },
           { visibility: 'on' }
         ]
-      },{
+      }, {
         featureType: 'road',
         elementType: 'labels',
         stylers: [
@@ -122,7 +125,7 @@ function init() {
           { lightness: 26 },
           { visibility: 'on' }
         ]
-      },{
+      }, {
         featureType: 'road.arterial',
         elementType: 'geometry',
         stylers: [
@@ -131,7 +134,7 @@ function init() {
           { lightness: -35 },
           { visibility: 'simplified' }
         ]
-      },{
+      }, {
         featureType: 'road.highway',
         elementType: 'geometry',
         stylers: [
@@ -140,7 +143,7 @@ function init() {
           { lightness: -22 },
           { visibility: 'on' }
         ]
-      },{
+      }, {
         featureType: 'poi.school',
         elementType: 'all',
         stylers: [
@@ -151,19 +154,24 @@ function init() {
         ]
       }
     ]
-    ,
-  }
-  var mapElement = document.getElementById('mapa');
-  var map = new google.maps.Map(mapElement, mapOptions);
-  var locations = [
-    ['Evropské příležitosti regionu 2014', 'Aula VŠB-TUO<br />17. listopadu 15/2172<br />Ostrava', 'undefined', 'konference@dobra-rada.cz', 'konference.dobra-rada.cz', 49.8307856, 18.162868, '/assets/img/solid-pin-darkblue.png']
-  ];
+  },
+    mapElement = document.getElementById('mapa'),
+    map = new google.maps.Map(mapElement, mapOptions),
+    locations = [
+      ['Evropské příležitosti regionu 2014',
+        'Aula VŠB-TUO<br>17. listopadu 15/2172<br>Ostrava',
+        'undefined',
+        'konference@dobra-rada.cz',
+        'konference.dobra-rada.cz',
+        49.8307856, 18.162868,
+        '/assets/img/solid-pin-darkblue.png']
+    ];
   for (i = 0; i < locations.length; i++) {
-    if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
-    if (locations[i][2] =='undefined'){ telephone ='';} else { telephone = locations[i][2];}
-    if (locations[i][3] =='undefined'){ email ='';} else { email = locations[i][3];}
-    if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
-    if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
+    if (locations[i][1] === 'undefined') { description = ''; } else { description = locations[i][1]; }
+    if (locations[i][2] === 'undefined') { telephone = ''; } else { telephone = locations[i][2]; }
+    if (locations[i][3] === 'undefined') { email = ''; } else { email = locations[i][3]; }
+    if (locations[i][4] === 'undefined') { web = ''; } else { web = locations[i][4]; }
+    if (locations[i][7] === 'undefined') { markericon = ''; } else { markericon = locations[i][7]; }
     marker = new google.maps.Marker({
       icon: markericon,
       position: new google.maps.LatLng(locations[i][5], locations[i][6]),
@@ -177,7 +185,7 @@ function init() {
     bindInfoWindow(marker, map, locations[i][0], description, telephone, email, web);
   }
   function bindInfoWindow(marker, map, title, desc, telephone, email, web) {
-    if (web.substring(0, 7) != "http://") {
+    if (web.substring(0, 7) !== "http://") {
       link = "http://" + web;
     } else {
       link = web;
@@ -192,14 +200,14 @@ function init() {
       };
     }());
     iw = new google.maps.InfoWindow();
-    google.maps.event.addListener(marker, 'click', function() {
+    google.maps.event.addListener(marker, 'click', function () {
       if (infoWindowVisible()) {
         iw.close();
         infoWindowVisible(false);
       } else {
-        var html= "<div style='color:#000;background-color:#fff;padding:5px;width:260px;'><h3>"+title+"</h3><p>"+desc+"<p><a href='mailto:"+email+"' >"+email+"<a><a href='"+link+"'' >"+web+"<a></div>";
-        iw = new google.maps.InfoWindow({content:html});
-        iw.open(map,marker);
+        var html = "<div style='color:#000;background-color:#fff;padding:5px;width:260px;'><h3>" + title + "</h3><p>" + desc + "<p><a href='mailto:" + email + "' >" + email + "<a><a href='" + link + "'' >" + web + "<a></div>";
+        iw = new google.maps.InfoWindow({content: html});
+        iw.open(map, marker);
         infoWindowVisible(true);
       }
     });
