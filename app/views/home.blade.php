@@ -89,7 +89,7 @@
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">11:10 - 13:00 <span>Hlavní sál</span></div>
-            <div class="col-sm-8 program--prednaska">Panelová diskuze: Smysluplné investice v období 2014-20 a jiná hvězdná témata <em>Jan Jedlička, Stefania Koczar-Sikora, Václav Palička, Milena Vicenová, David Sventek</em></div>
+            <div class="col-sm-8 program--prednaska">Panelová diskuze: Smysluplné investice v&nbsp;období 2014-20 a&nbsp;jiná hvězdná témata <em>Jan Jedlička, Stefania Koczar-Sikora, Václav Palička, Milena Vicenová, David Sventek</em></div>
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">13:00 - 14:00 </div>
@@ -176,138 +176,140 @@
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
 
+      @if ($regForm)
+        
         @if ($attendeesCount['hlavni'] < $options['kapacita'])
-
+                                      
           @if ($errors->has())
-            <ul>
-              {{ $errors->first('firstname', '<li>:message</li>'); }}
-              {{ $errors->first('surname', '<li>:message</li>'); }}
-              {{ $errors->first('organisation', '<li>:message</li>'); }}
-              {{ $errors->first('email', '<li>:message</li>'); }}
-              {{ $errors->first('terms', '<li>:message</li>'); }}
-              {{ $errors->first('hlavni_sal', '<li>:message</li>'); }}
-            </ul>
+            <div class="alert alert-danger">
+              {{ $errors->first('firstname', '<p>:message</p>'); }}
+              {{ $errors->first('surname', '<p>:message</p>'); }}
+              {{ $errors->first('organisation', '<p>:message</p>'); }}
+              {{ $errors->first('email', '<p>:message</p>'); }}
+              {{ $errors->first('terms', '<p>:message</p>'); }}
+              {{ $errors->first('hlavni_sal', '<p>:message</p>'); }}
+            </div>
           @endif
 
-      {{ Form::open(array('route' => 'attendees.store')) }}
+        {{ Form::open(array('route' => 'attendees.store')) }}
+        
+        <div class="form-group @if ($errors->has('firstname')) has-error @endif">
+          {{ Form::label('firstname', 'Jméno (povinné)', ['class' => 'label--modry']) }}
+          {{ Form::text('firstname', null, ['class' => 'form-control']) }}
 
-      <div class="form-group @if ($errors->has('firstname')) has-error @endif">
-        {{ Form::label('firstname', 'Jméno (povinné)', ['class' => 'label--modry']) }}
-        {{ Form::text('firstname', null, ['class' => 'form-control']) }}
-
-        @if ($errors->has('firstname'))
-          <p class="help-block">{{ $errors->first('firstname') }}</p>
-        @endif
-        </div>
-
-      <div class="form-group @if ($errors->has('surname')) has-error @endif">
-        {{ Form::label('surname', 'Příjmení (povinné)', ['class' => 'label--modry']) }}
-        {{ Form::text('surname', null, ['class' => 'form-control']) }}
-
-        @if ($errors->has('surname'))
-          <p class="help-block">{{ $errors->first('surname') }}</p>
-        @endif
-        </div>
-
-      <div class="form-group @if ($errors->has('organisation')) has-error @endif">
-        {{ Form::label('organisation', 'Organizace (povinné)', ['class' => 'label--modry']) }}
-        {{ Form::text('organisation', null, ['class' => 'form-control']) }}
-
-        @if ($errors->has('organisation'))
-          <p class="help-block">{{ $errors->first('organisation') }}</p>
-        @endif
-        </div>
-
-      <div class="form-group @if ($errors->has('email')) has-error @endif">
-        {{ Form::label('email', 'E-mail (povinné)', ['class' => 'label--modry']) }}
-        {{ Form::email('email', null, ['class' => 'form-control']) }}
-
-        @if ($errors->has('email'))
-          <p class="help-block">{{ $errors->first('email') }}</p>
-        @endif
-      </div>
-
-      <fieldset>
-
-      <div class="form-group @if ($errors->has('terms')) has-error @endif">
-        {{ Form::checkbox('terms', 1) }}
-        {{ Form::label('terms', 'Souhlasím s podmínkami registrace na konferenci EPR 2014', ['class' => 'label--tmavy']) }}
-
-        @if ($errors->has('terms'))
-          <p class="help-block">{{ $errors->first('terms') }}</p>
-        @endif
-        </div>
-
-      </fieldset>
-
-      <fieldset>
-        <h3>Hlavní program</h3>
-
-        <div class="form-group @if ($errors->has('hlavni_sal')) has-error @endif">
-          {{ Form::checkbox('hlavni_sal', 'hlavni-sal', true) }}
-          {{ Form::label('hlavni_sal', 'Chci se zúčastnit hlavního programu', ['class' => 'label--tmavy']) }}
-
-          @if ($errors->has('hlavni_sal'))
-            <p class="help-block">{{ $errors->first('hlavni_sal') }}</p>
-          @endif
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <h3>Odpolední program</h3>
-
-        <div class="form-group @if ($errors->has('seminar')) has-error @endif">
-          @if ($attendeesCount['s1'] < $options['kapacita_s1'])
-            {{ Form::radio('seminar', 's1') }}
-          @else
-            <input name="seminar" value="s1" type="radio" disabled>
-          @endif
-            {{ Form::label('seminar', 'Sekce nejen pro nové starosty', ['class' => 'label--tmavy']) }}
-          @if ($attendeesCount['s1'] < $options['kapacita_s1'])
-            (volná místa: {{ $volne['s1'] }})<br>
-          @else
-            (kapacita vyčerpána)<br>
-          @endif
-
-          @if ($attendeesCount['s2'] < $options['kapacita_s2'])
-            {{ Form::radio('seminar', 's2') }}
-          @else
-            <input name="seminar" value="s2" type="radio" disabled>
-          @endif
-            {{ Form::label('seminar', 'Sekce pro školy', ['class' => 'label--tmavy']) }}
-          @if ($attendeesCount['s2'] < $options['kapacita_s2'])
-            (volná místa: {{ $volne['s2'] }})<br>
-          @else
-            (kapacita vyčerpána)<br>
-          @endif
-
-          @if ($attendeesCount['s3'] < $options['kapacita_s3'])
-            {{ Form::radio('seminar', 's3') }}
-          @else
-            <input name="seminar" value="s3" type="radio" disabled>
-          @endif
-            {{ Form::label('seminar', 'Problematika Integrovaných teritoriálních investic pro poradenské agentury', ['class' => 'label--tmavy']) }}
-          @if ($attendeesCount['s3'] < $options['kapacita_s3'])
-            (volná místa: {{ $volne['s3'] }})<br>
-          @else
-            (kapacita vyčerpána)<br>
-          @endif
-
-          @if ($errors->has('seminar'))
-            <p class="help-block">{{ $errors->first('seminar') }}</p>
+          @if ($errors->has('firstname'))
+            <p class="help-block">{{ $errors->first('firstname') }}</p>
           @endif
         </div>
 
-      </fieldset>
+        <div class="form-group @if ($errors->has('surname')) has-error @endif">
+          {{ Form::label('surname', 'Příjmení (povinné)', ['class' => 'label--modry']) }}
+          {{ Form::text('surname', null, ['class' => 'form-control']) }}
 
-      {{ Form::submit('Zaregistrovat', ['class' => 'btn btn-primary btn-lg center-block']) }}
+          @if ($errors->has('surname'))
+            <p class="help-block">{{ $errors->first('surname') }}</p>
+          @endif
+        </div>
+
+        <div class="form-group @if ($errors->has('organisation')) has-error @endif">
+          {{ Form::label('organisation', 'Organizace (povinné)', ['class' => 'label--modry']) }}
+          {{ Form::text('organisation', null, ['class' => 'form-control']) }}
+
+          @if ($errors->has('organisation'))
+            <p class="help-block">{{ $errors->first('organisation') }}</p>
+          @endif
+        </div>
+
+        <div class="form-group @if ($errors->has('email')) has-error @endif">
+          {{ Form::label('email', 'E-mail (povinné)', ['class' => 'label--modry']) }}
+          {{ Form::email('email', null, ['class' => 'form-control']) }}
+
+          @if ($errors->has('email'))
+            <p class="help-block">{{ $errors->first('email') }}</p>
+          @endif
+        </div>
+
+        <fieldset class="inline-label">
+          <div class="form-group @if ($errors->has('terms')) has-error @endif">
+            {{ Form::checkbox('terms', 1) }}
+            {{ Form::label('terms', 'Souhlasím s podmínkami registrace na konferenci EPR 2014', ['class' => 'label--tmavy']) }}
+
+            @if ($errors->has('terms'))
+              <p class="help-block">{{ $errors->first('terms') }}</p>
+            @endif
+          </div>
+
+        </fieldset>
+
+        <fieldset class="inline-label">
+          <h3>Hlavní program</h3>
+
+          <div class="form-group @if ($errors->has('hlavni_sal')) has-error @endif">
+            {{ Form::checkbox('hlavni_sal', 'hlavni-sal', true) }}
+            {{ Form::label('hlavni_sal', 'Chci se zúčastnit hlavního programu', ['class' => 'label--tmavy']) }} (volná místa {{ $options['kapacita']-$attendeesCount['hlavni'] }})
+
+            @if ($errors->has('hlavni_sal'))
+              <p class="help-block">{{ $errors->first('hlavni_sal') }}</p>
+            @endif
+          </div>
+        </fieldset>
+
+        <fieldset class="inline-label">
+          <h3>Odpolední program</h3>
+
+          <div class="form-group @if ($errors->has('seminar')) has-error @endif">
+            @if ($attendeesCount['s1'] < $options['kapacita_s1'])
+              {{ Form::radio('seminar', 's1') }}
+            @else
+              <input name="seminar" value="s1" type="radio" disabled>
+            @endif
+              {{ Form::label('seminar', 'Sekce nejen pro nové starosty', ['class' => 'label--tmavy']) }}
+            @if ($attendeesCount['s1'] < $options['kapacita_s1'])
+              <span class="kapacita">(volná místa: {{ $volne['s1'] }})</span><br>
+            @else
+              <span class="kapacita">(kapacita vyčerpána)</span><br>
+            @endif
+
+            @if ($attendeesCount['s2'] < $options['kapacita_s2'])
+              {{ Form::radio('seminar', 's2') }}
+            @else
+              <input name="seminar" value="s2" type="radio" disabled>
+            @endif
+              {{ Form::label('seminar', 'Sekce pro školy', ['class' => 'label--tmavy']) }}
+            @if ($attendeesCount['s2'] < $options['kapacita_s2'])
+              <span class="kapacita">(volná místa: {{ $volne['s2'] }})</span><br>
+            @else
+              <span class="kapacita">(kapacita vyčerpána)</span><br>
+            @endif
+
+            @if ($attendeesCount['s3'] < $options['kapacita_s3'])
+              {{ Form::radio('seminar', 's3') }}
+            @else
+              <input name="seminar" value="s3" type="radio" disabled>
+            @endif
+              {{ Form::label('seminar', 'Problematika Integrovaných teritoriálních investic pro poradenské agentury', ['class' => 'label--tmavy']) }}
+            @if ($attendeesCount['s3'] < $options['kapacita_s3'])
+              <span class="kapacita">(volná místa: {{ $volne['s3'] }})</span><br>
+            @else
+              <span class="kapacita">(kapacita vyčerpána)</span><br>
+            @endif
+
+            @if ($errors->has('seminar'))
+              <p class="help-block">{{ $errors->first('seminar') }}</p>
+            @endif
+          </div>
+        </fieldset>
+
+        {{ Form::submit('Zaregistrovat', ['class' => 'btn btn-primary btn-lg center-block']) }}
 
         {{ Form::close() }}
 
-      @else
-
-      <p>Je nám líto, ale kapacita konference byla vyčerpána.</p>
-
+        @else
+          <p>Je nám líto, ale kapacita konference byla vyčerpána.</p>
+        @endif
+      
+      @else 
+        <p>Registrace na letošní ročník konference Evropské příležitosti regionu {{ $regDate }}</p>
       @endif
       </div>
     </div>

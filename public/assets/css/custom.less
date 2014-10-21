@@ -324,10 +324,28 @@
     margin-left: 18px;
   }
 
+  
+  input[type=radio], input[type=checkbox] {
+    margin-right: 8px;
+    
+    @media (min-width: @screen-xs-min)
+    {
+      margin-right: 12px;
+    }
+  }
+  
+/*  
   .label--tmavy
   {
-    margin-left: 12px;
+    margin-left: 0px;
+    
+    @media (min-width: @screen-sm-min)
+    {
+      margin-left: 12px;
+    }
+    
   }
+*/
 
   .label--tmavy, .label--modry
   {
@@ -354,6 +372,24 @@
     }
   }
 
+  fieldset.inline-label input[type=radio] {
+    margin-top: 1em;
+    
+    @media (min-width: @screen-sm-min)
+    {
+      margin-top: 0em;
+    }      
+  }
+  
+  fieldset.inline-label label {
+    display: inline;
+    
+    @media (min-width: @screen-sm-min)
+    {
+      display: inline-block;
+    }
+  }
+  
   fieldset:last-of-type
   {
     border-bottom: none;
@@ -375,7 +411,12 @@
 
   img
   {
-    margin: 2em 2em;
+    margin: 2em 1em;
+    
+    @media (min-width: @screen-xs-min)
+    {
+      margin: 2em 2em;
+    }  
   }
 
 }
@@ -395,6 +436,15 @@
   {
     color: @epr_blue--light;
     padding-right: 8px;
+  }
+  
+  img {
+    margin: 2em 0em;
+    
+   @media (min-width: @screen-sm-min)
+   {
+     margin: 0em;
+   }
   }
 }
 
@@ -433,4 +483,18 @@
 
 .gm-style-iw a {
   color: @epr_blue--light;
+}
+
+/*
+ * Flash zprávy v hlavičce
+ */
+
+.flash {
+  z-index: 9999;
+  position: absolute;
+  width: 100%;
+  
+  .alert {
+    border-radius: 0;
+  }
 }
