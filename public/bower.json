@@ -16,5 +16,8 @@
   ],
   "dependencies": {
     "bootstrap": "~3.2.0"
+  },
+  "devDependencies": {
+    "jquery.countdown": "~2.0.4"
   }
 }

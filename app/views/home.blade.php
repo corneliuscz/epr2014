@@ -177,9 +177,9 @@
       <div class="col-md-10 col-md-offset-1">
 
       @if ($regForm)
-        
+
         @if ($attendeesCount['hlavni'] < $options['kapacita'])
-                                      
+
           @if ($errors->has())
             <div class="alert alert-danger">
               {{ $errors->first('firstname', '<p>:message</p>'); }}
@@ -192,7 +192,7 @@
           @endif
 
         {{ Form::open(array('route' => 'attendees.store')) }}
-        
+
         <div class="form-group @if ($errors->has('firstname')) has-error @endif">
           {{ Form::label('firstname', 'Jméno (povinné)', ['class' => 'label--modry']) }}
           {{ Form::text('firstname', null, ['class' => 'form-control']) }}
@@ -232,11 +232,12 @@
         <fieldset class="inline-label">
           <div class="form-group @if ($errors->has('terms')) has-error @endif">
             {{ Form::checkbox('terms', 1) }}
-            {{ Form::label('terms', 'Souhlasím s podmínkami registrace na konferenci EPR 2014', ['class' => 'label--tmavy']) }}
+            {{ Form::label('terms', 'Souhlasím se zpracováním poskytnutých osobních údajů.*', ['class' => 'label--tmavy']) }}
 
             @if ($errors->has('terms'))
               <p class="help-block">{{ $errors->first('terms') }}</p>
             @endif
+            <p class="souhlas-maly small">* Souhlasím se zpracováním osobních údajů v&nbsp;souladu se zákonem č.&nbsp;101/2000 Sb. o&nbsp;ochraně osobních údajů a o&nbsp;změně některých zákonů, ve znění pozdějších předpisů, za účelem registrace na&nbsp;konferenci Evropské příležitosti regionu 2014, konané dne 27.11.2014 v&nbsp;Ostravě, a následným zasíláním informací e-mailem.</p>
           </div>
 
         </fieldset>
@@ -245,7 +246,7 @@
           <h3>Hlavní program</h3>
 
           <div class="form-group @if ($errors->has('hlavni_sal')) has-error @endif">
-            {{ Form::checkbox('hlavni_sal', 'hlavni-sal', true) }}
+            {{ Form::checkbox('hlavni_sal', 'hlavni-sal', false) }}
             {{ Form::label('hlavni_sal', 'Chci se zúčastnit hlavního programu', ['class' => 'label--tmavy']) }} (volná místa {{ $options['kapacita']-$attendeesCount['hlavni'] }})
 
             @if ($errors->has('hlavni_sal'))
@@ -305,11 +306,11 @@
         {{ Form::close() }}
 
         @else
-          <p>Je nám líto, ale kapacita konference byla vyčerpána.</p>
+          <p class="text-center big">Je nám líto, ale kapacita konference byla vyčerpána.</p>
         @endif
-      
-      @else 
-        <p>Registrace na letošní ročník konference Evropské příležitosti regionu {{ $regDate }}</p>
+
+      @else
+        <p class="text-center big">Registrace na letošní ročník konference Evropské příležitosti regionu {{ $regDate }}</p>
       @endif
       </div>
     </div>
@@ -319,4 +320,20 @@
   </div>
 </div>
 @stop
-</p>
+
+@section('countdownscript')
+  <script>
+  /*
+   * Countdown plugin
+   */
+    $("#countdown").countdown("{{{ $zacatek_registrace }}}", function(event) {
+      $(this).text(
+        event.strftime('%-D %!D:den,dny;, %-H %!H:hodinu,hodin;, %-M %!M:minutu,minut; a %-S %!S:vteřinu,vteřin;')
+      );
+    })
+    .on('finish.countdown', function(event) {
+      $(this).text('Pokud se vám neobnovila stránka stiskněte Ctrl+R');
+      window.location.href ='http://konference.dobra-rada.cz/#registrace';
+    });;
+  </script>
+@stop

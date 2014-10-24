@@ -3,7 +3,7 @@
 class HomeController extends BaseController {
 
 /*
- * HomeController@home 
+ * HomeController@home
  * Nasosání dat pro zobrazení na domovské stránce.
  */
 
@@ -20,21 +20,24 @@ class HomeController extends BaseController {
     $zacatek_registrace = DateTime::createFromFormat('Y-m-d H:i:s', $opts[0]['value']);
     $konec_registrace   = DateTime::createFromFormat('Y-m-d H:i:s', $opts[1]['value']);
 
+    $z_registrace = $opts[0]['value'];
+    $k_registrace = $opts[1]['value'];
+
     if (($now > $zacatek_registrace) && ($now < $konec_registrace)) {
       $regForm = TRUE;
     } else {
       $regForm = FALSE;
     }
-    
+
     $regDate = "";
-    
+
     if ($now < $zacatek_registrace) {
-      $regDate = "<strong>bude spuštěna koncem října</strong>";
+      $regDate = "bude spuštěna za <div id='countdown'></div>";
     }
     if ($now > $konec_registrace) {
       $regDate = "<strong>byla ukončena</strong>";
     }
-    
+
     $options['kapacita']    = $opts[2]['value'];
     $options['kapacita_s1'] = $opts[3]['value'];
     $options['kapacita_s2'] = $opts[4]['value'];
@@ -43,11 +46,13 @@ class HomeController extends BaseController {
     $volne['s1'] = $options['kapacita_s1'] - $attendeesCount['s1'];
     $volne['s2'] = $options['kapacita_s2'] - $attendeesCount['s2'];
     $volne['s3'] = $options['kapacita_s3'] - $attendeesCount['s3'];
-        
+
     return View::make('home')->with('attendeesCount', $attendeesCount)
       ->with('volne', $volne)
       ->with('options', $options)
       ->with('regForm', $regForm)
-      ->with('regDate', $regDate);
+      ->with('regDate', $regDate)
+      ->with('zacatek_registrace', $z_registrace)
+      ->with('konec_registrace', $k_registrace);
   }
 }

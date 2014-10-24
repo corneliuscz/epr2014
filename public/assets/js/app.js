@@ -1,6 +1,6 @@
 /*jslint browser: true*/
 /*jslint plusplus: true */
-/*global $, jQuery, alert, google*/
+/*global $, jQuery, alert, google, init */
 
 $(function () {
   "use strict";
@@ -32,15 +32,15 @@ $(function () {
 });
 
 /*
- * Skryjeme flash zprávy po nějaké době 
+ * Skryjeme flash zprávy po nějaké době
  */
 
-window.setTimeout(function() {
-    $(".flash").fadeTo(500, 0).slideUp(500, function(){
-        $(this).remove(); 
-    });
+window.setTimeout(function () {
+  "use strict";
+  $(".flash").fadeTo(500, 0).slideUp(500, function () {
+    $(this).remove();
+  });
 }, 5000);
-
 
 /*
  * Skript generující Google Mapu
@@ -176,7 +176,16 @@ function init() {
         'konference.dobra-rada.cz',
         49.8307856, 18.162868,
         '/assets/img/solid-pin-darkblue.png']
-    ];
+    ],
+    i,
+    description,
+    telephone,
+    email,
+    web,
+    markericon,
+    marker,
+    link,
+    iw;
   for (i = 0; i < locations.length; i++) {
     if (locations[i][1] === 'undefined') { description = ''; } else { description = locations[i][1]; }
     if (locations[i][2] === 'undefined') { telephone = ''; } else { telephone = locations[i][2]; }

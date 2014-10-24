@@ -94,7 +94,7 @@
           <div class="col-sm-12 loga-partneru">
             <a href="http://www.dobra-rada.cz" title="Regionální rada Moravskoslezsko"><img src="/assets/img/logo_dark-rrms.png" width="180" height="90" alt="Regionální rada Moravskoslezsko"></a>
             <a href="http://www.nejkacka.eu" class="hidden-xs" title="Nejkačka.eu"><img src="/assets/img/logo_dark-nejkacka.png" width="335" height="80" alt="Nejkačka.eu - To nejzajímavější o evropských penězích v Moravskoslezsku"></a>
-            <a href="http://www.nejkacka.eu" class="hidden-print hidden-sm hidden-md hidden-lg" title="Nejkačka.eu"><img src="/assets/img/logo_dark-nejkacka-small.png" width="166" height="80" alt="Nejkačka.eu - To nejzajímavější o evropských penězích v Moravskoslezsku"></a><br> 
+            <a href="http://www.nejkacka.eu" class="hidden-print hidden-sm hidden-md hidden-lg" title="Nejkačka.eu"><img src="/assets/img/logo_dark-nejkacka-small.png" width="166" height="80" alt="Nejkačka.eu - To nejzajímavější o evropských penězích v Moravskoslezsku"></a><br>
             <a href="http://www.csas.cz" title="Česká Spořitelna a.s."><img src="/assets/img/logo_dark-csas.png" width="180" height="80" alt="Česká Spořitelna a.s."></a>
             <a href="http://www.vsb.cz" title="VŠB-TUO"><img src="/assets/img/logo_dark-vsb.png" width="95" height="110" alt="VŠB-TUO"></a>
             <a href="http://planetarium.vsb.cz" title="VŠB-TUO"><img src="/assets/img/logo_dark-planetarium.png" width="250" height="80" alt="Planetárium Ostrava"></a>
@@ -148,7 +148,10 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src='https://maps.googleapis.com/maps/api/js?key=&sensor=false&extension=.js'></script>
     <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/jquery.countdown.min.js"></script>
 
-    <script src="/assets/js/app.min.js"></script>
+    @yield('countdownscript')
+
+    <script src="/assets/js/app.js"></script>
   </body>
 </html>

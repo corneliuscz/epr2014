@@ -48,7 +48,7 @@ class Attendee extends \Eloquent {
                                           si musíte <strong>vybrat alespoň jednu část 
                                           programu,</strong> které se zúčastníte (hlavní
                                           program nebo tématické sekce)',
-        'terms.required'              => '<strong>Souhlas s podmínkami</strong> je povinný'
+        'terms.required'              => '<strong>Souhlas se zpracováním osobních údajů</strong> je povinný'
     );
 
     public static function validate($data) {
