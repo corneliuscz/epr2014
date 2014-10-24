@@ -27,18 +27,18 @@
       </div>
       <div class="clearfix visible-md-block"></div>
       <div class="col-sm-6 col-md-4 col-lg-3">
-        <img src="/assets/img/dostalovak.png" class="img-responsive" alt="Kateřina Dostálová Foto">
-        <div class="ucinkujici">Kateřina Dostálová <em>Úřad Regionální rady Moravskoslezsko</em></div>
+        <img src="/assets/img/mazal.png" class="img-responsive" alt="Rostislav Mazal Foto">
+        <div class="ucinkujici">Rostislav Mazal <em>Ministerstvo pro místní rozvoj</em></div>
       </div>
       <div class="clearfix visible-sm-block"></div>
       <div class="clearfix visible-lg-block"></div>
       <div class="col-sm-6 col-md-4 col-lg-3">
-        <img src="/assets/img/palicka.png" class="img-responsive" alt="Václav Palička Foto">
-        <div class="ucinkujici">Václav Palička <em>Statutární město Ostrava</em></div>
+        <img src="/assets/img/dostalovak.png" class="img-responsive" alt="Kateřina Dostálová Foto">
+        <div class="ucinkujici">Kateřina Dostálová <em>Úřad Regionální rady Moravskoslezsko</em></div>
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3">
-        <img src="/assets/img/mmr.png" class="img-responsive" alt="MMR Foto">
-        <div class="ucinkujici">Zástupce MMR <em>Ministerstvo pro místní rozvoj</em></div>
+        <img src="/assets/img/palicka.png" class="img-responsive" alt="Václav Palička Foto">
+        <div class="ucinkujici">Václav Palička <em>Statutární město Ostrava</em></div>
       </div>
     </div>
 
@@ -77,7 +77,7 @@
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">10:00 - 10:30 <span>Hlavní sál</span></div>
-            <div class="col-sm-8 program--prednaska">Představení Integrovaného regionálního operačního programu (IROP) <em>Zástupce Ministerstva pro místní rozvoj</em></div>
+            <div class="col-sm-8 program--prednaska">Představení Integrovaného regionálního operačního programu (IROP) <em>Rostislav Mazal,  Ministerstvo pro místní rozvoj</em></div>
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">10:30 - 11:00 </div>
@@ -89,17 +89,17 @@
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">11:10 - 13:00 <span>Hlavní sál</span></div>
-            <div class="col-sm-8 program--prednaska">Panelová diskuze: Smysluplné investice v&nbsp;období 2014-20 a&nbsp;jiná hvězdná témata <em>Jan Jedlička, Stefania Koczar-Sikora, Václav Palička, Milena Vicenová, David Sventek</em></div>
+            <div class="col-sm-8 program--prednaska">Panelová diskuze: Smysluplné investice v&nbsp;období 2014-20 a&nbsp;jiná hvězdná témata <em>Milena Vicenová, Jan Jedlička, Stefania Koczar-Sikora, David Sventek, Václav Palička</em></div>
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">13:00 - 14:00 </div>
               <div class="col-sm-8 program--prednaska">Oběd (Foyer)</div>
           </div>
-          <div class="row program--pdf">
+<!--          <div class="row program--pdf">
             <div class="col-md-12">
               <img src="/assets/img/ikona-pdf.png" alt="PDF s programem"> <a href="/assets/program.pdf" title="PDF s programem konference pro tisk" class="btn btn-primary btn-lg">PDF s programem</a>
             </div>
-          </div>
+          </div>  -->
         </div>
       </div>
 

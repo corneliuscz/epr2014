@@ -71,19 +71,6 @@
     </clipPath>
     <clipPath
        clipPathUnits="userSpaceOnUse"
-       id="clipPath3976">
-      <path
-         sodipodi:nodetypes="ccccccccc"
-         inkscape:connector-curvature="0"
-         id="path3978"
-         d="m 3840.5312,522.36218 -390.5312,68.875 0,193.71875 47.1562,267.40627 289.6563,0 303.1875,-53.46877 0,-269.84375 0,-206.6875 z"
-         style="color:#000000;fill:#fdfdfd;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:15;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-         inkscape:export-filename="mmr.png"
-         inkscape:export-xdpi="90"
-         inkscape:export-ydpi="90" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
        id="clipPath3834">
       <path
          inkscape:export-ydpi="90"
@@ -95,6 +82,19 @@
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="ccccccccc" />
     </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3827">
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="mmr.png"
+         style="color:#000000;fill:#ef2929;fill-opacity:0.24154591;fill-rule:nonzero;stroke:none;stroke-width:15;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         d="m 3796.0927,782.44619 -394.3122,42.1452 -13.1799,193.26991 28.8537,269.995 288.9851,19.707 306.1228,-32.7172 18.3591,-269.2185 14.0622,-206.20856 z"
+         id="path3829"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccccc" />
+    </clipPath>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -103,9 +103,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.24748737"
-     inkscape:cx="4947.894"
-     inkscape:cy="217.24078"
+     inkscape:zoom="0.35"
+     inkscape:cx="3324.7684"
+     inkscape:cy="105.13283"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -115,7 +115,7 @@
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:showpageshadow="false"
-     showguides="true"
+     showguides="false"
      inkscape:guide-bbox="true">
     <sodipodi:guide
        orientation="0,1"
@@ -153,66 +153,78 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccc" />
     <image
+       y="699.01886"
+       x="3202.0376"
+       id="image3043"
+       xlink:href="file:///D:/wamp/www/epr2014.local/public/_src/mazal.jpg"
+       height="940.71436"
+       width="929.78986"
+       clip-path="url(#clipPath3827)"
+       transform="matrix(0.99768287,-0.068036,0.068036,0.99768287,0,0)"
+       inkscape:export-filename="D:\wamp\www\epr2014.local\public\assets\img\mazal.png"
+       inkscape:export-xdpi="89.999992"
+       inkscape:export-ydpi="89.999992" />
+    <image
        sodipodi:absref="D:\wamp\www\epr2014.local\public\_src\Katka-dostalova-cb.jpg"
        xlink:href="Katka-dostalova-cb.jpg"
-       inkscape:export-ydpi="90"
-       inkscape:export-xdpi="90"
-       inkscape:export-filename="dostalovak.png"
-       clip-path="url(#clipPath3940)"
-       width="897.33746"
-       height="1346.0062"
-       id="image3908"
+       y="216.10739"
        x="2613.8901"
-       y="216.10739" />
+       id="image3908"
+       height="1346.0062"
+       width="897.33746"
+       clip-path="url(#clipPath3940)"
+       inkscape:export-filename="dostalovak.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <image
        sodipodi:absref="D:\wamp\www\epr2014.local\public\_src\palicka-cb.png"
        xlink:href="palicka-cb.png"
-       inkscape:export-ydpi="90"
-       inkscape:export-xdpi="90"
-       inkscape:export-filename="palicka.png"
-       clip-path="url(#clipPath3945)"
-       width="1246.8591"
-       height="935.14429"
-       id="image3882"
+       y="398.80014"
        x="1762.5509"
-       y="398.80014" />
+       id="image3882"
+       height="935.14429"
+       width="1246.8591"
+       clip-path="url(#clipPath3945)"
+       inkscape:export-filename="palicka.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <image
        sodipodi:absref="D:\wamp\www\epr2014.local\public\_src\jedlicka-cb.png"
        xlink:href="jedlicka-cb.png"
-       inkscape:export-ydpi="90"
-       inkscape:export-xdpi="90"
-       inkscape:export-filename="jedlicka.png"
-       clip-path="url(#clipPath3950)"
-       width="665.70612"
-       height="812.3316"
-       id="image3857"
+       y="437.61707"
        x="1368.2842"
-       y="437.61707" />
+       id="image3857"
+       height="812.3316"
+       width="665.70612"
+       clip-path="url(#clipPath3950)"
+       inkscape:export-filename="jedlicka.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <image
        sodipodi:absref="D:\wamp\www\epr2014.local\public\_src\klara-dostalova-cb.png"
        xlink:href="klara-dostalova-cb.png"
-       inkscape:export-ydpi="90"
-       inkscape:export-xdpi="90"
-       inkscape:export-filename="dostalova.png"
-       clip-path="url(#clipPath3955)"
-       transform="scale(-1,1)"
-       width="1221.1495"
-       height="1831.7245"
-       id="image3842"
+       y="57.854019"
        x="-1578.9581"
-       y="57.854019" />
+       id="image3842"
+       height="1831.7245"
+       width="1221.1495"
+       transform="scale(-1,1)"
+       clip-path="url(#clipPath3955)"
+       inkscape:export-filename="dostalova.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <image
        sodipodi:absref="D:\wamp\www\epr2014.local\public\_src\Stefania_Koczar-Sikora_CB.png"
        xlink:href="Stefania_Koczar-Sikora_CB.png"
-       inkscape:export-ydpi="90"
-       inkscape:export-xdpi="90"
-       inkscape:export-filename="sikora.png"
-       clip-path="url(#clipPath3870)"
-       width="1316.6803"
-       height="1753.7676"
-       id="image3815"
+       y="274.13519"
        x="-317.05328"
-       y="274.13519" />
+       id="image3815"
+       height="1753.7676"
+       width="1316.6803"
+       clip-path="url(#clipPath3870)"
+       inkscape:export-filename="sikora.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <path
        style="color:#000000;fill:#ef2929;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:15;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        d="m 0,442.36218 0,68.875 390.53125,-68.875 -390.53125,0 z"
@@ -283,15 +295,6 @@
        style="color:#000000;fill:#21244c;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:15;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        inkscape:connector-curvature="0" />
     <path
-       id="path3960"
-       d="m 3300.9618,1293.4783 v -83.5003 c 0,0 5.4338,-51.2575 67.1613,-67.1612 0,0 99.4133,-36.2977 177.276,-70.1885 40.2691,-17.5147 48.9338,-28.0401 89.5544,-45.9899 0,0 4.2402,-20.8566 2.7128,-33.27058 h 31.7707 c 0,0 7.2575,4.23055 0,-44.77725 0,0 -38.7232,-10.27556 -40.5283,-88.3326 0,0 -29.0862,9.79416 -30.8635,-37.51034 -1.2127,-32.06708 -26.0222,-59.90361 9.6828,-82.88934 l -18.1534,-49.00783 c 0,0 -36.2973,-197.84574 68.0686,-168.80579 -44.0275,-52.63668 249.5751,-105.26408 268.6452,61.71801 0,0 13.5989,90.15631 0,151.86507 0,0 42.8796,-4.96189 14.2099,77.45532 0,0 -15.728,59.29261 -39.9358,45.98073 0,0 3.9527,75.02066 -34.1684,87.74012 0,0 2.7123,39.92652 2.7123,42.64811 l 36.3161,5.44328 c 0,0 -5.4617,32.67799 0.9071,36.29759 0,0 43.0556,29.4936 94.3777,42.6667 98.9321,25.3925 215.9991,68.9664 215.9991,107.0875 0,0 9.9886,50.8225 9.9886,112.5312 h -925.7332 z"
-       inkscape:connector-curvature="0"
-       style="fill:#cfcfcf;fill-opacity:1"
-       clip-path="url(#clipPath3976)"
-       inkscape:export-filename="mmr.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
        sodipodi:nodetypes="ccccccccc"
        inkscape:connector-curvature="0"
        id="path3017"
@@ -311,15 +314,16 @@
        d="m 4780,998.89343 -303.1875,53.46877 303.1875,0 0,-53.46877 z"
        id="path3021" />
     <image
-       y="283.05115"
-       x="3765.7515"
-       id="image3035"
-       xlink:href="file:///C:/Users/vybiral/Desktop/milena-vicenova01_cb.jpg"
-       height="2139.8057"
-       width="1449.0172"
-       clip-path="url(#clipPath3834)"
-       inkscape:export-filename="D:\wamp\www\epr2014.local\public\assets\img\vicenova.png"
+       sodipodi:absref="D:\wamp\www\epr2014.local\public\_src\milena-vicenova01_cb.jpg"
+       xlink:href="milena-vicenova01_cb.jpg"
+       inkscape:export-ydpi="90"
        inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+       inkscape:export-filename="D:\wamp\www\epr2014.local\public\assets\img\vicenova.png"
+       clip-path="url(#clipPath3834)"
+       width="1449.0172"
+       height="2139.8057"
+       id="image3035"
+       x="3765.7515"
+       y="283.05115" />
   </g>
 </svg>
