@@ -152,7 +152,7 @@
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">10:00 - 14:30 <span>Vchod do Auly</span></div>
-            <div class="col-sm-8 program--prednaska">Pozorování slunce s Planetáriem Ostrava <em>(v případě příznivého počasí)</em></div>
+            <div class="col-sm-8 program--prednaska">Pozorování Slunce s Planetáriem Ostrava <em>(v případě příznivého počasí)</em></div>
           </div>
         </div>
       </div>
