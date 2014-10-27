@@ -37,6 +37,7 @@
           <ul class="nav navbar-nav navbar-left">
             <li @if (Request::is('admin')) class="active" @endif><a href="{{ URL::to('admin') }}">Účastníci</a></li>
             <li @if (Request::is('admin/odhlaseni')) class="active" @endif><a href="{{ URL::to('admin/odhlaseni') }}">Odhlášení účastníci</a></li>
+            <li @if (Request::is('admin/dotazy')) class="active" @endif><a href="{{ URL::to('admin/dotazy') }}">Otázky pro diskuzi</a></li>
             <li @if (Request::is('admin/nastaveni')) class="active" @endif><a href="{{ URL::to('admin/nastaveni') }}">Nastavení konference</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
