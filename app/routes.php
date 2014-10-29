@@ -25,12 +25,19 @@ Route::get('odhlasit/{email}/{cancel_hash}', function ($email, $cancel_hash)
 });
 
 Route::get('diskuze', 'DiscussionsController@create');
+Route::get('dotazy', 'DiscussionsController@index')->before('auth');
 
 Route::get('nactiotazky', function() {
   if(Request::ajax())
     {
+      // Načteme publikované otázky (qstatus = 1)
       $questions = Question::getPublicQuestions();
-      echo $questions;
+      // Načteme připnuté otázky (qstatus = 4)
+      $pinnedQuestions = Question::getPinnedQuestions();
+      // Spojíme data do jednoho JSON objektu
+      $outputQuestions = json_encode(array_merge(json_decode($questions, true),json_decode($pinnedQuestions, true)));
+      // Posuneme odpověď zpátky do stránky
+      echo $outputQuestions;
     }
 });
 

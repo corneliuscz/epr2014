@@ -1,0 +1,48 @@
+/*!
+ * EPR2014 (http://konference.dobra-rada.cz)
+ * Copyright 2014 Regional Council Moravia Silesia, Josef Vybíral
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+// Core variables and mixins
+@import "../../bower_components/bootstrap/less/variables.less";
+@import "../../bower_components/bootstrap/less/mixins.less";
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=latin-ext);
+
+@epr_pink:        #e50046;
+@epr_blue--light: #00afec;
+@epr_blue--dark:  #21244c;
+
+/*
+ * Admin diskuzních otázek
+ */
+
+td.status {
+  color: @gray-light;
+}
+
+td.status--new {
+  color: @brand-warning;
+}
+
+td.status--visible {
+  color: @brand-info;
+}
+
+td.status--pinned {
+  color: @epr_blue--light;
+}
+
+td.status--done {
+  color: @brand-success;
+}
+
+td.actions {
+  color: @gray-lighter;
+}
+
+tr.spam {
+  color: @gray-light;
+  text-decoration: line-through;
+}

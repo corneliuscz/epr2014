@@ -1,0 +1,31 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=latin-ext);
+/*!
+ * EPR2014 (http://konference.dobra-rada.cz)
+ * Copyright 2014 Regional Council Moravia Silesia, Josef Vybíral
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+/*
+ * Admin diskuzních otázek
+ */
+td.status {
+  color: #777777;
+}
+td.status--new {
+  color: #f0ad4e;
+}
+td.status--visible {
+  color: #5bc0de;
+}
+td.status--pinned {
+  color: #00afec;
+}
+td.status--done {
+  color: #5cb85c;
+}
+td.actions {
+  color: #eeeeee;
+}
+tr.spam {
+  color: #777777;
+  text-decoration: line-through;
+}

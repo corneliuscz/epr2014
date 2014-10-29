@@ -14,6 +14,10 @@
 @epr_blue--light: #00afec;
 @epr_blue--dark:  #21244c;
 
+@q_body-color: #fff;
+@q_cite-color: #d0d0d0;
+@q_links-color: #fff;
+
 .big {
   font-size: 1.7em;
   font-weight: 300;
@@ -513,7 +517,6 @@
   }
 }
 
-
 /*
  * Stránka s Diskuzí
  */
@@ -522,7 +525,7 @@ body.diskuze {
   background: #0c101c url('/assets/img/hvezdne-pozadi.jpg') 0% 0% no-repeat;
   background-attachment: fixed;
 
-  color: #fff;
+  color: @q_body-color;
 
   h2 {
     //color: #fff;
@@ -534,7 +537,29 @@ body.diskuze {
     margin-bottom: 3em;
 
     footer {
-      color: #d0d0d0;
+      color: @q_cite-color;
+    }
+  }
+
+  #otazky {
+    a {
+      color: @q_links-color;
+      text-decoration: none;
+    }
+  }
+
+  #pripnute {
+    blockquote {
+      background-color: @q_body-color;
+      padding: 1em;
+      border-radius: 5px;
+    }
+    cite {
+      color: @gray-light;
+    }
+    a {
+      color: @epr_blue--dark;
+      text-decoration: none;
     }
   }
 

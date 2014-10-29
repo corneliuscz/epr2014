@@ -12,20 +12,28 @@
 
     <div class="row">
       <div class="col-md-6">
-        <h3>Otázka</h3>
-        <blockquote>
-          <p>It would be nice if we could store this on an external file and then just read everything into the data variable. To make things easier, I’m going to use jQuery, so we’ll have to load that library first and then call it’s getJSON function. Here’s what our entire page’s code looks like.</p>
-          <footer><cite>Anonymní dotaz</cite></footer>
-        </blockquote>
+        <h3>Aktuální otázka</h3>
+        <div id="pripnute">
+        @foreach ($pinnedQuestions as $pinnedQuestion)
+          <a href="{{ URL::route('dotazy.update', $pinnedQuestion->id) }}" title="Připnout" data-method="PATCH" data-value="2">
+          <blockquote>
+            <p>{{ nl2br(e($pinnedQuestion->question)) }}</p>
+            <footer><cite>{{{ ( $pinnedQuestion->asker != "" ) ?  $pinnedQuestion->asker : 'Anonymní dotaz' }}}</cite></footer>
+          </blockquote>
+          </a>
+        @endforeach
+        </div>
       </div>
       <div class="col-md-6">
         <h3>Poslední dotazy</h3>
         <div id="otazky">
         @foreach ($questions as $question)
+          <a href="{{ URL::route('dotazy.update', $question->id) }}" title="Připnout" data-method="PATCH" data-value="4">
           <blockquote>
             <p>{{ nl2br(e($question->question)) }}</p>
-            <footer><cite>{{{ isset( $question->asker ) ?  $question->asker : 'Anonymní dotaz' }}}</cite></footer>
+            <footer><cite>{{{ ( $question->asker != "" ) ?  $question->asker : 'Anonymní dotaz' }}}</cite></footer>
           </blockquote>
+          </a>
         @endforeach
         </div>
       </div>
@@ -43,20 +51,41 @@
 
 @section('refreshscript')
     <script>
-      $("document").ready(function(){
-        setInterval( function () {
+      $("document").ready( function() {
+        restActions();
+      });
+
+      $("document").ready( function() {
+        setInterval( function() {
             $.ajax({
                 type: "GET",
                 url : "nactiotazky",
-                success : function(data){
+                success : function(data) {
                   data = JSON.parse(data);
-                  console.log(data);
+                  //console.log(data);
 
-                  var output='';
+                  var otazky = '',
+                      pripnute = '',
+                      otazka = '',
+                      tazatel = '';
+
                   for (var i in data) {
-                    output+="<blockquote><p>" + data[i].question + " </p> <footer><cite>" + data[i].asker + "</cite></footer></blockquote>";
+                    // Formátování otázky
+                    otazka = data[i].question.replace(/\n/g, "<br />");
+                    // Rozhodnutí co vepíšeme do autora dotazu
+                    tazatel = ((data[i].asker !== "") ? data[i].asker : 'Anonymní dotaz')
+
+                    if ( data[i].qstatus === 4 ) {
+                      pripnute+="<a href='/dotazy/" + data[i].id + "' title='Připnout' data-method='PATCH' data-value='2'><blockquote><p>" + otazka + " </p> <footer><cite>" + tazatel + "</cite></footer></blockquote></a>";
+                    } else {
+                      otazky+="<a href='/dotazy/" + data[i].id + "' title='Připnout' data-method='PATCH' data-value='4'><blockquote><p>" + otazka + " </p> <footer><cite>" + tazatel + "</cite></footer></blockquote></a>";
+                    }
                   }
-                  $('#otazky').html(output);
+                  $('#otazky').html(otazky);
+                  $('#pripnute').html(pripnute);
+
+                  // Zprovozníme odkazy
+                  restActions();
                 }
               //failure :
             },"json");

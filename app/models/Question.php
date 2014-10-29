@@ -47,4 +47,15 @@ class Question extends \Eloquent {
     return $questions;
   }
 
+  /**
+   * Get all pinned questions
+   *
+   * @return ARRAY
+   */
+  public static function getPinnedQuestions()
+  {
+    $questions = Question::where('qstatus', '=', 4)->orderBy('created_at', 'desc')->get();
+    return $questions;
+  }
+
 }

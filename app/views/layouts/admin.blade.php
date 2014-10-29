@@ -8,6 +8,7 @@
 
     <!-- Bootstrap -->
     <link href="/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/css/admin.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -65,5 +66,11 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/assets/js/bootstrap.min.js"></script>
     <script src="/assets/js/admin-scripts.js"></script>
+    <script>
+    $(document).ready(function() {
+      restActions();
+    });
+    </script>
+
   </body>
 </html>

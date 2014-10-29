@@ -10,8 +10,15 @@ class DiscussionsController extends \BaseController {
    */
   public function index()
   {
-    $questions = Question::getPublicQuestions();
-    return View::make('discussion.index')->with('questions', $questions);
+    if (Auth::check()) {
+      $questions = Question::getPublicQuestions();
+      $pinnedQuestions = Question::getPinnedQuestions();
+      return View::make('discussion.index')
+        ->with('questions', $questions)
+        ->with('pinnedQuestions', $pinnedQuestions);
+    } else {
+      return Redirect::intended('/diskuze');
+    }
   }
 
   /**
@@ -95,7 +102,21 @@ class DiscussionsController extends \BaseController {
    */
   public function update($id)
   {
-    //
+    if (Auth::check()) {
+
+      $input = Input::all();
+      $question = Question::FindOrFail($id);
+      $question->qstatus = $input['qstatus'];
+      $saved = $question->save();
+
+      if ($saved) {
+        return Redirect::intended('/dotazy')->with('flash_message', '<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button> Stav otázky byl aktualizován</div>');
+      } else {
+        return Redirect::intended('/dotazy')->with('flash_message', '<div class="alert alert-danger" role="alert">Něco se rozbilo, zavolej Pepu</div>');
+      }
+    } else {
+      return Redirect::intended('/');
+    }
   }
 
   /**

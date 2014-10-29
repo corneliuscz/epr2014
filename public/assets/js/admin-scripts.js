@@ -1,4 +1,4 @@
-$(function () {
+function restActions() {
   /*
    * Převedeme odkazy na smazání účastníka konference na formuláře aby se poslalo DESTROY
    */
@@ -31,4 +31,4 @@ $(function () {
   * Aktivujeme tlačítko pro vypnutí alertu
   */
   $(".alert").alert();
-});
+}
