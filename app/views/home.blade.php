@@ -178,7 +178,10 @@
 
       @if ($regForm)
 
-        @if ($attendeesCount['hlavni'] < $options['kapacita'])
+        @if (( $attendeesCount['hlavni'] < $options['kapacita'] )
+            || ( $attendeesCount['s1'] < $options['kapacita_s1'] )
+            || ( $attendeesCount['s2'] < $options['kapacita_s2'] )
+            || ( $attendeesCount['s3'] < $options['kapacita_s3'] ) )
 
           @if ($errors->has())
             <div class="alert alert-danger">
@@ -246,8 +249,19 @@
           <h3>Hlavní program</h3>
 
           <div class="form-group @if ($errors->has('hlavni_sal')) has-error @endif">
-            {{ Form::checkbox('hlavni_sal', 'hlavni-sal', false) }}
-            {{ Form::label('hlavni_sal', 'Chci se zúčastnit hlavního programu', ['class' => 'label--tmavy']) }} (volná místa {{ $options['kapacita']-$attendeesCount['hlavni'] }})
+            @if ($attendeesCount['hlavni'] < $options['kapacita'])
+              {{ Form::checkbox('hlavni_sal', 'hlavni-sal', false) }}
+            @else
+              <input name="hlavni_sal" value="hlavni-sal" type="checkbox" disabled>
+            @endif
+
+            {{ Form::label('hlavni_sal', 'Chci se zúčastnit hlavního programu', ['class' => 'label--tmavy']) }}
+
+            @if ($attendeesCount['hlavni'] < $options['kapacita'])
+              <span class="kapacita">(volná místa {{ $options['kapacita']-$attendeesCount['hlavni'] }})</span><br>
+            @else
+              <span class="kapacita"><strong>(kapacita hlavního programu byla vyčerpána)</strong></span><br>
+            @endif
 
             @if ($errors->has('hlavni_sal'))
               <p class="help-block">{{ $errors->first('hlavni_sal') }}</p>
@@ -268,7 +282,7 @@
             @if ($attendeesCount['s1'] < $options['kapacita_s1'])
               <span class="kapacita">(volná místa: {{ $volne['s1'] }})</span><br>
             @else
-              <span class="kapacita">(kapacita vyčerpána)</span><br>
+              <span class="kapacita"><strong>(kapacita vyčerpána)</strong></span><br>
             @endif
 
             @if ($attendeesCount['s2'] < $options['kapacita_s2'])
@@ -280,7 +294,7 @@
             @if ($attendeesCount['s2'] < $options['kapacita_s2'])
               <span class="kapacita">(volná místa: {{ $volne['s2'] }})</span><br>
             @else
-              <span class="kapacita">(kapacita vyčerpána)</span><br>
+              <span class="kapacita"><strong>(kapacita vyčerpána)</strong></span><br>
             @endif
 
             @if ($attendeesCount['s3'] < $options['kapacita_s3'])
@@ -292,7 +306,7 @@
             @if ($attendeesCount['s3'] < $options['kapacita_s3'])
               <span class="kapacita">(volná místa: {{ $volne['s3'] }})</span><br>
             @else
-              <span class="kapacita">(kapacita vyčerpána)</span><br>
+              <span class="kapacita"><strong>(kapacita vyčerpána)</strong></span><br>
             @endif
 
             @if ($errors->has('seminar'))
