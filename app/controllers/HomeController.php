@@ -9,7 +9,8 @@ class HomeController extends BaseController {
 
   public function home()
   {
-    $attendeesCount['hlavni'] = Attendee::all()->count();
+    $attendeesCount['vsichni'] = Attendee::all()->count();
+    $attendeesCount['hlavni'] = Attendee::where('hlavni_sal', 'LIKE', 'hlavni-sal')->count();
     $attendeesCount['s1'] = Attendee::where('seminar', 'LIKE', 's1')->count();
     $attendeesCount['s2'] = Attendee::where('seminar', 'LIKE', 's2')->count();
     $attendeesCount['s3'] = Attendee::where('seminar', 'LIKE', 's3')->count();
