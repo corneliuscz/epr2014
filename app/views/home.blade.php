@@ -173,6 +173,12 @@
       </div>
     </div>
 
+    <!-- <div class="row">
+      <div class="col-md-10  col-md-offset-1">
+        <p class="fullhouse">Pro velký zájem je v&nbsp;současné době kapacita konference vyčerpána. Pokusíme se o&nbsp;její alespoň částečné navýšení. Pokud máte zájem o&nbsp;účast na&nbsp;již plně rezervované části, kontaktujte nás prosím prostřednictvím e-mailu <a href="mailto:konference@dobra-rada.cz">konference@dobra-rada.cz</a>, uveďte jméno, příjmení, organizaci a název části konference, o&nbsp;kterou máte zájem. Děkujeme.</p>
+      </div>
+    </div> -->
+
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
 
