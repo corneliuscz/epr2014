@@ -95,11 +95,11 @@
             <div class="col-sm-4 program--cas">13:00 - 14:00 </div>
               <div class="col-sm-8 program--prednaska">Oběd (Foyer)</div>
           </div>
-<!--          <div class="row program--pdf">
+          <div class="row program--pdf">
             <div class="col-md-12">
               <img src="/assets/img/ikona-pdf.png" alt="PDF s programem"> <a href="/assets/program.pdf" title="PDF s programem konference pro tisk" class="btn btn-primary btn-lg">PDF s programem</a>
             </div>
-          </div>  -->
+          </div>
         </div>
       </div>
 
