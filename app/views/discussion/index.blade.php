@@ -75,7 +75,7 @@
                     // Rozhodnutí co vepíšeme do autora dotazu
                     tazatel = ((data[i].asker !== "") ? data[i].asker : 'Anonymní dotaz')
 
-                    if ( data[i].qstatus === 4 ) {
+                    if ( data[i].qstatus == 4 ) {
                       pripnute+="<a href='/dotazy/" + data[i].id + "' title='Připnout' data-method='PATCH' data-value='2'><blockquote><p>" + otazka + " </p> <footer><cite>" + tazatel + "</cite></footer></blockquote></a>";
                     } else {
                       otazky+="<a href='/dotazy/" + data[i].id + "' title='Připnout' data-method='PATCH' data-value='4'><blockquote><p>" + otazka + " </p> <footer><cite>" + tazatel + "</cite></footer></blockquote></a>";
@@ -89,7 +89,7 @@
                 }
               //failure :
             },"json");
-        }, 10000);
+        }, 5000);
       });//end of document ready function
 
     </script>
