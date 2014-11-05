@@ -255,7 +255,7 @@
               <input name="hlavni_sal" value="hlavni-sal" type="checkbox" disabled>
             @endif
             
-            <label for="hlavni_sal" class="label--tmavy @if ($volne['hlavni'] == 0) label--obsazeno @endif">Chci se zúčastnit hlavního programu</label> 
+            <label for="hlavni_sal" class="label--tmavy @if ($volne['hlavni'] <= 0) label--obsazeno @endif">Chci se zúčastnit hlavního programu</label> 
 
             @if ($volne['hlavni'] > 0)
               <span class="kapacita">(volná místa {{ $volne['hlavni'] }})</span><br>
@@ -279,7 +279,7 @@
               <input name="seminar" value="s1" type="radio" disabled>
             @endif
             
-            <label for="seminar" class="label--tmavy @if ($volne['s1'] == 0) label--obsazeno @endif">Sekce nejen pro nové starosty</label>
+            <label for="seminar" class="label--tmavy @if ($volne['s1'] <= 0) label--obsazeno @endif">Sekce nejen pro nové starosty</label>
             
             @if ($volne['s1'] > 0)
               <span class="kapacita">(volná místa: {{ $volne['s1'] }})</span><br>
@@ -293,7 +293,7 @@
               <input name="seminar" value="s2" type="radio" disabled>
             @endif
             
-            <label for="seminar" class="label--tmavy @if ($volne['s2'] == 0) label--obsazeno @endif">Sekce pro školy</label>
+            <label for="seminar" class="label--tmavy @if ($volne['s2'] <= 0) label--obsazeno @endif">Sekce pro školy</label>
             
             @if ($volne['s2'] > 0)
               <span class="kapacita">(volná místa: {{ $volne['s2'] }})</span><br>
@@ -307,7 +307,7 @@
               <input name="seminar" value="s3" type="radio" disabled>
             @endif
             
-            <label for="seminar" class="label--tmavy @if ($volne['s3'] == 0) label--obsazeno @endif">Problematika Integrovaných teritoriálních investic pro poradenské agentury</label>
+            <label for="seminar" class="label--tmavy @if ($volne['s3'] <= 0) label--obsazeno @endif">Problematika Integrovaných teritoriálních investic pro poradenské agentury</label>
 
             @if ($volne['s3'] > 0)
               <span class="kapacita">(volná místa: {{ $volne['s3'] }})</span><br>
