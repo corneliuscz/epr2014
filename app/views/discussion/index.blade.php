@@ -15,12 +15,12 @@
         <h3>Aktuální otázka</h3>
         <div id="pripnute">
         @foreach ($pinnedQuestions as $pinnedQuestion)
-          <a href="{{ URL::route('dotazy.update', $pinnedQuestion->id) }}" title="Připnout" data-method="PATCH" data-value="2">
+          @if (Auth::check()) <a href="{{ URL::route('dotazy.update', $pinnedQuestion->id) }}" title="Označit přečtené" data-method="PATCH" data-value="2"> @endif
           <blockquote>
             <p>{{ nl2br(e($pinnedQuestion->question)) }}</p>
             <footer><cite>{{{ ( $pinnedQuestion->asker != "" ) ?  $pinnedQuestion->asker : 'Anonymní dotaz' }}}</cite></footer>
           </blockquote>
-          </a>
+           @if (Auth::check()) </a> @endif
         @endforeach
         </div>
       </div>
@@ -28,12 +28,12 @@
         <h3>Poslední dotazy</h3>
         <div id="otazky">
         @foreach ($questions as $question)
-          <a href="{{ URL::route('dotazy.update', $question->id) }}" title="Připnout" data-method="PATCH" data-value="4">
+          @if (Auth::check()) <a href="{{ URL::route('dotazy.update', $question->id) }}" title="Připnout" data-method="PATCH" data-value="4"> @endif
           <blockquote>
             <p>{{ nl2br(e($question->question)) }}</p>
             <footer><cite>{{{ ( $question->asker != "" ) ?  $question->asker : 'Anonymní dotaz' }}}</cite></footer>
           </blockquote>
-          </a>
+          @if (Auth::check()) </a> @endif
         @endforeach
         </div>
       </div>
@@ -41,7 +41,7 @@
 
     <div class="row">
       <div class="col-md-8 col-md-push-2">
-          <p class="text-center">Své dotazy pro diskutující můžete posílat pomocí svých mobilních telefonů nebo počítačů z webu konference na&nbsp;adrese: <a href="http://konference.dobra-rada.cz/diskuze">konference.dobra-rada.cz/diskuze</a></p>
+          <p class="text-center">Své dotazy pro diskutující můžete posílat pomocí svých mobilních telefonů nebo počítačů z&nbsp;webu konference na&nbsp;adrese: <a href="http://konference.dobra-rada.cz/diskuze">konference.dobra-rada.cz/diskuze</a></p>
       </div>
     </div>
 
@@ -76,9 +76,14 @@
                     tazatel = ((data[i].asker !== "") ? data[i].asker : 'Anonymní dotaz')
 
                     if ( data[i].qstatus == 4 ) {
-                      pripnute+="<a href='/dotazy/" + data[i].id + "' title='Připnout' data-method='PATCH' data-value='2'><blockquote><p>" + otazka + " </p> <footer><cite>" + tazatel + "</cite></footer></blockquote></a>";
+                      @if (Auth::check())
+                        pripnute += "<a href='/dotazy/" + data[i].id + "' title='Označit přečtené' data-method='PATCH' data-value='2'>"; @endif
+                      pripnute += "<blockquote><p>" + otazka + " </p> <footer><cite>" + tazatel + "</cite></footer></blockquote>";
+                      @if (Auth::check()) pripnute+= "</a>" @endif
                     } else {
-                      otazky+="<a href='/dotazy/" + data[i].id + "' title='Připnout' data-method='PATCH' data-value='4'><blockquote><p>" + otazka + " </p> <footer><cite>" + tazatel + "</cite></footer></blockquote></a>";
+                      @if (Auth::check()) otazky+="<a href='/dotazy/" + data[i].id + "' title='Připnout' data-method='PATCH' data-value='4'>"; @endif
+                      otazky+="<blockquote><p>" + otazka + " </p> <footer><cite>" + tazatel + "</cite></footer></blockquote>";
+                      @if (Auth::check()) otazky+= "</a>" @endif
                     }
                   }
                   $('#otazky').html(otazky);

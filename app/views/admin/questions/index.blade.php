@@ -11,7 +11,7 @@
           <th>Otázka</th>
           <th>Přidáno</th>
           <th>Stav</th>
-          <th colspan="3">Akce</th>
+          <th colspan="4">Akce</th>
         </tr>
       </thead>
       @foreach ($questions as $question)

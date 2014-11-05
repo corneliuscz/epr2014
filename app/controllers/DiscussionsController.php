@@ -10,15 +10,15 @@ class DiscussionsController extends \BaseController {
    */
   public function index()
   {
-    if (Auth::check()) {
+    //if (Auth::check()) {
       $questions = Question::getPublicQuestions();
       $pinnedQuestions = Question::getPinnedQuestions();
       return View::make('discussion.index')
         ->with('questions', $questions)
         ->with('pinnedQuestions', $pinnedQuestions);
-    } else {
-      return Redirect::intended('/diskuze');
-    }
+    //} else {
+    //  return Redirect::intended('/diskuze');
+    //}
   }
 
   /**

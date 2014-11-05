@@ -6,7 +6,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        <h2 class="text-center">Vaše otázka na diskutující</h2>
+        <h2 class="text-center">Přispějte do diskuze svým dotazem</h2>
       </div>
     </div>
 
@@ -23,17 +23,17 @@
         {{ Form::open(array('route' => 'dotazy.store', 'class' => 'form-horizontal')) }}
 
         <div class="form-group @if ($errors->has('question')) has-error @endif">
-          {{ Form::label('question', 'Vaše otázka:', array('class' => 'col-sm-2 control-label')) }}
-          <div class="col-sm-10">
-            {{ Form::textarea('question', null, ['class' => 'form-control']) }}
+          {{ Form::label('question', 'Otázka:', array('class' => 'col-sm-3 control-label')) }}
+          <div class="col-sm-9">
+            {{ Form::textarea('question', null, ['class' => 'form-control', 'placeholder' => 'Prostor pro vaši otázku']) }}
             @if ($errors->has('question')) <p class="help-block">{{ $errors->first('question') }}</p> @endif
           </div>
         </div>
 
         <div class="form-group @if ($errors->has('asker')) has-error @endif">
-          {{ Form::label('asker', 'Vaše jméno:', array('class' => 'col-sm-2 control-label')) }}
-          <div class="col-sm-10">
-            {{ Form::text('asker', null, ['class' => 'form-control']) }}
+          {{ Form::label('asker', 'Autor dotazu:', array('class' => 'col-sm-3 control-label')) }}
+          <div class="col-sm-9">
+            {{ Form::text('asker', null, ['class' => 'form-control', 'placeholder' => 'Nepovinné']) }}
             @if ($errors->has('asker')) <p class="help-block">{{ $errors->first('asker') }}</p> @endif
           </div>
         </div>
