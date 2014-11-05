@@ -44,9 +44,10 @@ class HomeController extends BaseController {
     $options['kapacita_s2'] = $opts[4]['value'];
     $options['kapacita_s3'] = $opts[5]['value'];
 
-    $volne['s1'] = $options['kapacita_s1'] - $attendeesCount['s1'];
-    $volne['s2'] = $options['kapacita_s2'] - $attendeesCount['s2'];
-    $volne['s3'] = $options['kapacita_s3'] - $attendeesCount['s3'];
+    $volne['hlavni']  = $options['kapacita'] - $attendeesCount['hlavni'];
+    $volne['s1']      = $options['kapacita_s1'] - $attendeesCount['s1'];
+    $volne['s2']      = $options['kapacita_s2'] - $attendeesCount['s2'];
+    $volne['s3']      = $options['kapacita_s3'] - $attendeesCount['s3'];
 
     return View::make('home')->with('attendeesCount', $attendeesCount)
       ->with('volne', $volne)

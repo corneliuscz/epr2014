@@ -173,12 +173,6 @@
       </div>
     </div>
 
-    <!-- <div class="row">
-      <div class="col-md-10  col-md-offset-1">
-        <p class="fullhouse">Pro velký zájem je v&nbsp;současné době kapacita konference vyčerpána. Pokusíme se o&nbsp;její alespoň částečné navýšení. Pokud máte zájem o&nbsp;účast na&nbsp;již plně rezervované části, kontaktujte nás prosím prostřednictvím e-mailu <a href="mailto:konference@dobra-rada.cz">konference@dobra-rada.cz</a>, uveďte jméno, příjmení, organizaci a název části konference, o&nbsp;kterou máte zájem. Děkujeme.</p>
-      </div>
-    </div> -->
-
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
 
@@ -255,18 +249,18 @@
           <h3>Hlavní program</h3>
 
           <div class="form-group @if ($errors->has('hlavni_sal')) has-error @endif">
-            @if ($attendeesCount['hlavni'] < $options['kapacita'])
+            @if ($volne['hlavni'] > 0)
               {{ Form::checkbox('hlavni_sal', 'hlavni-sal', false) }}
             @else
               <input name="hlavni_sal" value="hlavni-sal" type="checkbox" disabled>
             @endif
+            
+            <label for="hlavni_sal" class="label--tmavy @if ($volne['hlavni'] == 0) label--obsazeno @endif">Chci se zúčastnit hlavního programu</label> 
 
-            {{ Form::label('hlavni_sal', 'Chci se zúčastnit hlavního programu', ['class' => 'label--tmavy']) }}
-
-            @if ($attendeesCount['hlavni'] < $options['kapacita'])
-              <span class="kapacita">(volná místa {{ $options['kapacita']-$attendeesCount['hlavni'] }})</span><br>
+            @if ($volne['hlavni'] > 0)
+              <span class="kapacita">(volná místa {{ $volne['hlavni'] }})</span><br>
             @else
-              <span class="kapacita"><strong>(kapacita hlavního programu byla vyčerpána)</strong></span><br>
+              <span class="kapacita">(kapacita hlavního programu byla vyčerpána)</span><br>
             @endif
 
             @if ($errors->has('hlavni_sal'))
@@ -279,40 +273,46 @@
           <h3>Odpolední program</h3>
 
           <div class="form-group @if ($errors->has('seminar')) has-error @endif">
-            @if ($attendeesCount['s1'] < $options['kapacita_s1'])
+            @if ($volne['s1'] > 0)
               {{ Form::radio('seminar', 's1') }}
             @else
               <input name="seminar" value="s1" type="radio" disabled>
             @endif
-              {{ Form::label('seminar', 'Sekce nejen pro nové starosty', ['class' => 'label--tmavy']) }}
-            @if ($attendeesCount['s1'] < $options['kapacita_s1'])
+            
+            <label for="seminar" class="label--tmavy @if ($volne['s1'] == 0) label--obsazeno @endif">Sekce nejen pro nové starosty</label>
+            
+            @if ($volne['s1'] > 0)
               <span class="kapacita">(volná místa: {{ $volne['s1'] }})</span><br>
             @else
-              <span class="kapacita"><strong>(kapacita vyčerpána)</strong></span><br>
+              <span class="kapacita">(kapacita sekce vyčerpána)</span><br>
             @endif
 
-            @if ($attendeesCount['s2'] < $options['kapacita_s2'])
+            @if ($volne['s2'] > 0)
               {{ Form::radio('seminar', 's2') }}
             @else
               <input name="seminar" value="s2" type="radio" disabled>
             @endif
-              {{ Form::label('seminar', 'Sekce pro školy', ['class' => 'label--tmavy']) }}
-            @if ($attendeesCount['s2'] < $options['kapacita_s2'])
+            
+            <label for="seminar" class="label--tmavy @if ($volne['s2'] == 0) label--obsazeno @endif">Sekce pro školy</label>
+            
+            @if ($volne['s2'] > 0)
               <span class="kapacita">(volná místa: {{ $volne['s2'] }})</span><br>
             @else
-              <span class="kapacita"><strong>(kapacita vyčerpána)</strong></span><br>
+              <span class="kapacita">(kapacita sekce vyčerpána)</span><br>
             @endif
 
-            @if ($attendeesCount['s3'] < $options['kapacita_s3'])
+            @if ($volne['s3'] > 0)
               {{ Form::radio('seminar', 's3') }}
             @else
               <input name="seminar" value="s3" type="radio" disabled>
             @endif
-              {{ Form::label('seminar', 'Problematika Integrovaných teritoriálních investic pro poradenské agentury', ['class' => 'label--tmavy']) }}
-            @if ($attendeesCount['s3'] < $options['kapacita_s3'])
+            
+            <label for="seminar" class="label--tmavy @if ($volne['s3'] == 0) label--obsazeno @endif">Problematika Integrovaných teritoriálních investic pro poradenské agentury</label>
+
+            @if ($volne['s3'] > 0)
               <span class="kapacita">(volná místa: {{ $volne['s3'] }})</span><br>
             @else
-              <span class="kapacita"><strong>(kapacita vyčerpána)</strong></span><br>
+              <span class="kapacita">(kapacita sekce vyčerpána)</span><br>
             @endif
 
             @if ($errors->has('seminar'))
