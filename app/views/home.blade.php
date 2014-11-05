@@ -260,7 +260,7 @@
             @if ($volne['hlavni'] > 0)
               <span class="kapacita">(volná místa {{ $volne['hlavni'] }})</span><br>
             @else
-              <span class="kapacita">(kapacita hlavního programu byla vyčerpána)</span><br>
+              <span class="kapacita kapacita--obsazeno">(kapacita hlavního programu byla vyčerpána)</span><br>
             @endif
 
             @if ($errors->has('hlavni_sal'))
@@ -284,7 +284,7 @@
             @if ($volne['s1'] > 0)
               <span class="kapacita">(volná místa: {{ $volne['s1'] }})</span><br>
             @else
-              <span class="kapacita">(kapacita sekce vyčerpána)</span><br>
+              <span class="kapacita kapacita--obsazeno">(kapacita sekce vyčerpána)</span><br>
             @endif
 
             @if ($volne['s2'] > 0)
@@ -298,7 +298,7 @@
             @if ($volne['s2'] > 0)
               <span class="kapacita">(volná místa: {{ $volne['s2'] }})</span><br>
             @else
-              <span class="kapacita">(kapacita sekce vyčerpána)</span><br>
+              <span class="kapacita kapacita--obsazeno">(kapacita sekce vyčerpána)</span><br>
             @endif
 
             @if ($volne['s3'] > 0)
@@ -312,7 +312,7 @@
             @if ($volne['s3'] > 0)
               <span class="kapacita">(volná místa: {{ $volne['s3'] }})</span><br>
             @else
-              <span class="kapacita">(kapacita sekce vyčerpána)</span><br>
+              <span class="kapacita kapacita--obsazeno">(kapacita sekce vyčerpána)</span><br>
             @endif
 
             @if ($errors->has('seminar'))
