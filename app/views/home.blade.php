@@ -73,7 +73,7 @@
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">9:30 - 10:00 <span>Hlavní sál</span></div>
-            <div class="col-sm-8 program--prednaska">Implementační struktura pro léta 2014-20 <em>Zástupce Ministerstva pro místní rozvoj</em></div>
+            <div class="col-sm-8 program--prednaska">Implementační struktura pro léta 2014-20 <em>Daniela Nohejlová, Ministerstvo pro místní rozvoj</em></div>
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">10:00 - 10:30 <span>Hlavní sál</span></div>
@@ -254,8 +254,8 @@
             @else
               <input name="hlavni_sal" value="hlavni-sal" type="checkbox" disabled>
             @endif
-            
-            <label for="hlavni_sal" class="label--tmavy @if ($volne['hlavni'] <= 0) label--obsazeno @endif">Chci se zúčastnit hlavního programu</label> 
+
+            <label for="hlavni_sal" class="label--tmavy @if ($volne['hlavni'] <= 0) label--obsazeno @endif">Chci se zúčastnit hlavního programu</label>
 
             @if ($volne['hlavni'] > 0)
               <span class="kapacita">(volná místa {{ $volne['hlavni'] }})</span><br>
@@ -278,9 +278,9 @@
             @else
               <input name="seminar" value="s1" type="radio" disabled>
             @endif
-            
+
             <label for="seminar" class="label--tmavy @if ($volne['s1'] <= 0) label--obsazeno @endif">Sekce nejen pro nové starosty</label>
-            
+
             @if ($volne['s1'] > 0)
               <span class="kapacita">(volná místa: {{ $volne['s1'] }})</span><br>
             @else
@@ -292,9 +292,9 @@
             @else
               <input name="seminar" value="s2" type="radio" disabled>
             @endif
-            
+
             <label for="seminar" class="label--tmavy @if ($volne['s2'] <= 0) label--obsazeno @endif">Sekce pro školy</label>
-            
+
             @if ($volne['s2'] > 0)
               <span class="kapacita">(volná místa: {{ $volne['s2'] }})</span><br>
             @else
@@ -306,7 +306,7 @@
             @else
               <input name="seminar" value="s3" type="radio" disabled>
             @endif
-            
+
             <label for="seminar" class="label--tmavy @if ($volne['s3'] <= 0) label--obsazeno @endif">Problematika Integrovaných teritoriálních investic pro poradenské agentury</label>
 
             @if ($volne['s3'] > 0)
