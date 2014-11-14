@@ -89,7 +89,7 @@
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">11:10 - 13:00 <span>Hlavní sál</span></div>
-            <div class="col-sm-8 program--prednaska">Panelová diskuze: Smysluplné investice v&nbsp;období 2014-20 a&nbsp;jiná hvězdná témata <em>Milena Vicenová, Jan Jedlička, Stefania Koczar-Sikora, David Sventek, Václav Palička</em></div>
+            <div class="col-sm-8 program--prednaska">Panelová diskuze: Smysluplné investice v&nbsp;období 2014-20 a&nbsp;jiná hvězdná témata <em>Milena Vicenová, Jan Jedlička, Stefania Koczar-Sikora, Rostislav Mazal, David Sventek, Václav Palička</em></div>
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">13:00 - 14:00 </div>
@@ -119,11 +119,11 @@
         <div class="col-sm-10 col-sm-offset-1">
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">14:00 - 15:30 <span>Hlavní sál</span></div>
-            <div class="col-sm-8 program--prednaska">Sekce nejen pro nové starosty <em>Hana Gavlasová (Úřad Regionální rady Moravskoslezsko), zástupce starostů</em></div>
+            <div class="col-sm-8 program--prednaska">Sekce nejen pro nové starosty <em>Hana Gavlasová (Úřad Regionální rady Moravskoslezsko), <br>Josef Jalůvka (Město Kopřivnice)</em></div>
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">14:00 - 15:30 <span>Sál 1</span></div>
-            <div class="col-sm-8 program--prednaska">Sekce pro školy <em>Kateřina Hlostová (Úřad Regionální rady Moravskoslezsko), zástupce OP VVV, zástupce škol</em></div>
+            <div class="col-sm-8 program--prednaska">Sekce pro školy <em>Kateřina Hlostová (Úřad Regionální rady Moravskoslezsko), <br>Jan Meca (Střední průmyslová škola a Obchodní akademie, Bruntál)</em></div>
           </div>
           <div class="row program--radka">
             <div class="col-sm-4 program--cas">14:00 - 15:30 <span>Sál 2</span></div>
