@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/', ['as' => 'home', 'uses' => 'HomeController@home']);
+//Route::get('/', ['as' => 'home', 'uses' => 'HomeController@home']);
+Route::get('/', function() {
+  return View::make('prezentace');
+});
 
 Route::get('login', 'SessionsController@create' );
 Route::get('logout', 'SessionsController@destroy' );
