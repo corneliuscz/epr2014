@@ -175,17 +175,26 @@
       </div>
 
       <div class="row">
-        <div class="col-md-5 col-md-offset-1">
+        <div class="col-md-4">
           <iframe src="//www.slideshare.net/slideshow/embed_code/42205957" width="476" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-4">
           <iframe src="//www.slideshare.net/slideshow/embed_code/42205904" width="476" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+        </div>
+        <div class="col-md-4">
+          <iframe src="//www.slideshare.net/slideshow/embed_code/42205954" width="476" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-md-5 col-md-offset-1">
-          <iframe src="//www.slideshare.net/slideshow/embed_code/42205954" width="476" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+        <div class="col-md-12">
+          <h3>Panelová diskuze</h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <iframe width="560" height="315" src="//www.youtube.com/embed/sF8itgxBxeg" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
 
