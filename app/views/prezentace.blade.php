@@ -194,7 +194,7 @@
 
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-          <iframe width="560" height="315" src="//www.youtube.com/embed/sF8itgxBxeg" frameborder="0" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="//www.youtube.com/embed/videoseries?list=PLPxlp3y3B7alaX06fr7ojxKcE4qeK_b6u" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
 
